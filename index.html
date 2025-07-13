@@ -35,25 +35,33 @@
       <a href="#cv">CV</a>
       <a href="#kontak">Kontak</a>
     </nav>
-  </header>  <section id="profil" class="section" data-aos="fade-up">
+  </header>  
+  <section id="profil" class="section" data-aos="fade-up">
     <h2>👤 Profil</h2>
     <img src="https://i.postimg.cc/8fJxPw9b/pp-portfolio.jpg" alt="Foto Profil Andra" class="profil-img"/>
     <p>Halo! Saya <strong>Andra Lutfiansyah Marshal</strong>, pemula yang sedang membangun portofolio web dan bertekad mengubah pola pikir manusia agar lebih maju.</p>
-  </section>  <section id="skill" class="section" data-aos="fade-up">
+    <p><strong id="typing"></strong></p>
+  </section>  
+
+  <section id="skill" class="section" data-aos="fade-up">
     <h2>🛠️ Skill</h2>
     <div class="skills">
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">HTML</div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">CSS</div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">JavaScript</div>
     </div>
-  </section>  <section id="projek" class="section" data-aos="fade-up">
+  </section>  
+
+  <section id="projek" class="section" data-aos="fade-up">
     <h2>📁 Projek</h2>
     <div class="card" data-aos="flip-up">
       <h3>Web Pribadi</h3>
       <p>Portofolio statis di-hosting via GitHub Pages.</p>
       <a class="btn" href="https://sh6wm3.github.io/Marshalweb/" target="_blank">Lihat Web</a>
     </div>
-  </section>  <section id="cv" class="section" data-aos="fade-up">
+  </section>  
+
+  <section id="cv" class="section" data-aos="fade-up">
     <h2>📄 Curriculum Vitae</h2>
     <div class="card">
       <p><strong>Pengalaman Kerja:</strong></p>
@@ -81,12 +89,38 @@
       </ul>
       <a class="btn" href="cv-andra.pdf" download>Download CV PDF</a>
     </div>
-  </section>  <section id="kontak" class="section" data-aos="fade-up">
+  </section>  
+
+  <section id="kontak" class="section" data-aos="fade-up">
     <h2>📬 Kontak</h2>
     <p>📱 WhatsApp: <a href="https://wa.me/628990097574" target="_blank">0899-0097-574</a></p>
     <p>📸 Instagram: <a href="https://instagram.com/MarshalVlaouse" target="_blank">@MarshalVlaouse</a></p>
     <p>📧 Gmail: <a href="mailto:andralutfiansyahforte@gmail.com">andralutfiansyahforte@gmail.com</a></p>
-  </section>  <footer data-aos="fade-up">
+  </section>  
+
+  <footer data-aos="fade-up">
     <p>© 2025 Andra Lutfiansyah Marshal</p>
-  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script> AOS.init(); </script></body>
+  </footer>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- TypeIt -->
+  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
+  <script>
+    new TypeIt("#typing", {
+      speed: 50,
+      waitUntilVisible: true,
+      loop: true,
+    })
+    .type("Barista", { delay: 600 })
+    .delete(7)
+    .type("Head Barista", { delay: 600 })
+    .delete(13)
+    .type("Web Developer", { delay: 600 })
+    .delete(14)
+    .go();
+  </script>
+</body>
 </html>
