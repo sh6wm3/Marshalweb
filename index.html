@@ -4,97 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Andra Marshal | Portofolio</title>
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0d1b2a;
-      color: #e0e1dd;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #1b263b;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    nav {
-      margin-top: 10px;
-    }
-    nav a {
-      color: #e0e1dd;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-    .section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      border-bottom: 2px solid #415a77;
-      padding-bottom: 5px;
-    }
-    .project {
-      background: #1b263b;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1b263b;
-      margin-top: 40px;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #778da9;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Segoe UI',sans-serif;background:#0d1b2a;color:#e0e1dd;line-height:1.6}
+    header,footer{background:#1b263b;text-align:center;padding:20px}
+    nav a{color:#e0e1dd;text-decoration:none;margin:0 10px;font-weight:bold}
+    .section{max-width:900px;margin:auto;padding:40px 20px}
+    h2{border-bottom:2px solid #415a77;padding-bottom:4px;margin-top:0}
+    /* card */
+    .card{background:#1b263b;border-radius:10px;padding:20px;margin:15px 0;transition:transform .2s}
+    .card:hover{transform:translateY(-6px)}
+    /* tombol */
+    .btn{display:inline-block;padding:11px 18px;background:#778da9;color:#fff;border-radius:6px;text-decoration:none;transition:transform .1s}
+    .btn:active{transform:scale(.96);background:#5e7693}
+    /* skill grid */
+    .skills{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+    .skill{width:90px;text-align:center}
+    .skill img{width:48px;height:48px}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Andra Marshal</h1>
-    <nav>
-      <a href="#tentang">Tentang</a>
-      <a href="#projek">Projek</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-  </header>
 
-  <section id="tentang" class="section">
-    <h2>👤 Tentang Saya</h2>
-    <p>Halo! Saya Andra Lutfiansyah Marshal, sedang belajar membangun web dan mengubah pola pikir manusia agar lebih maju. 🚀</p>
-  </section>
+<header data-aos="fade-down">
+  <h1>Andra Marshal</h1>
+  <nav>
+    <a href="#tentang">Tentang</a>
+    <a href="#skill">Skill</a>
+    <a href="#projek">Projek</a>
+    <a href="#kontak">Kontak</a>
+    <a href="cv.html">CV</a>
+  </nav>
+</header>
 
-  <section id="projek" class="section">
-    <h2>📁 Projek</h2>
-    <div class="project">
-      <h3>Web Pribadi</h3>
-      <p>Website ini adalah portofolio saya yang dibangun dengan HTML & CSS dasar dan dihosting di GitHub Pages.</p>
-      <a href="#" class="button">Lihat</a>
+<section id="tentang" class="section" data-aos="fade-up">
+  <h2>👤 Tentang Saya</h2>
+  <p>Halo! Saya Andra Lutfiansyah Marshal—pemula yang sedang belajar web &amp; bercita-cita <m> “mengubah pola pikir manusia agar lebih maju.” </m>🚀</p>
+</section>
+
+<section id="skill" class="section" data-aos="zoom-in">
+  <h2>🛠️ Skill</h2>
+  <div class="skills">
+    <div class="skill">
+      <img src="https://cdn.simpleicons.org/html5/f75421" alt="HTML"/>
+      <div>HTML</div>
     </div>
-    <!-- Tambah project lain di sini -->
-  </section>
+    <div class="skill">
+      <img src="https://cdn.simpleicons.org/css3/2965f1" alt="CSS"/>
+      <div>CSS</div>
+    </div>
+    <div class="skill">
+      <img src="https://cdn.simpleicons.org/javascript/f7df1e" alt="JavaScript"/>
+      <div>JS</div>
+    </div>
+    <!-- Tambah skill lain pakai pola di atas -->
+  </div>
+</section>
 
-  <section id="kontak" class="section">
-    <h2>📫 Kontak</h2>
-    <p>Email: andra@example.com</p>
-    <p>GitHub: <a href="https://github.com/sh6wm3" style="color:#a3cef1;">@sh6wm3</a></p>
-  </section>
+<section id="projek" class="section" data-aos="fade-right">
+  <h2>📁 Projek</h2>
+  <div class="card" data-aos="flip-up">
+    <h3>Web Pribadi</h3>
+    <p>Portofolio statis di-hosting via GitHub Pages.</p>
+    <a href="https://sh6wm3.github.io/Marshalweb/" target="_blank" class="btn">Lihat</a>
+  </div>
+</section>
 
-  <footer>
-    <p>© 2025 Andra Marshal. Dibuat dengan semangat belajar.</p>
-  </footer>
+<section id="kontak" class="section" data-aos="fade-left">
+  <h2>📫 Kontak</h2>
+  <p>Email : <a href="mailto:andra@example.com" style="color:#a3cef1">andra@example.com</a></p>
+  <p>GitHub : <a href="https://github.com/sh6wm3" target="_blank" style="color:#a3cef1">@sh6wm3</a></p>
+  <a class="btn" href="https://wa.me/6281234567890" target="_blank">Chat WhatsApp</a>
+</section>
+
+<footer data-aos="fade-up"><p>© 2025 Andra Marshal</p></footer>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>AOS.init();</script>
 </body>
 </html>
