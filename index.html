@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,63 +9,181 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * {box-sizing:border-box;scroll-behavior:smooth;font-family:'Inter',sans-serif;}
-    body{margin:0;background:#f5f7fa;color:#333;}
-    header,footer{background:#1e293b;color:#fff;text-align:center;padding:1rem;}
-    nav a{margin:0 1rem;color:white;text-decoration:none;}
-    .hero{
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      padding:3rem 1rem;background:linear-gradient(135deg,#1e3a8a,#3b82f6);
-      color:white;text-align:center;position:relative;
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Inter', sans-serif;
     }
-    .hero img{width:120px;height:120px;border-radius:50%;margin-bottom:1rem;object-fit:cover;box-shadow:0 4px 12px rgba(0,0,0,.3);}
-    .hero h1{font-size:2rem;margin:0 0 0.5rem;font-weight:700;}
-    .hero p{font-size:1.1rem;max-width:500px;margin:0 auto 1rem;}
-    .typewriter{font-weight:bold;font-size:1.2rem;color:#fff;height:1.5em;}
-    .section{padding:2rem;max-width:800px;margin:auto;}
-    h2{border-bottom:2px solid #415a77;padding-bottom:4px;margin-top:0;}
-    .card{background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.05);padding:1.5rem;margin-bottom:1.5rem;}
-    .btn{display:inline-block;background:#3b82f6;color:#fff;padding:.6rem 1.2rem;border-radius:6px;text-decoration:none;margin-top:1rem;transition:.1s transform;}
-    .btn:active{transform:scale(.96);background:#5e7693;}
-    .skills{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
-    .skill{background:#fff;border-radius:8px;padding:1rem;box-shadow:0 2px 6px rgba(0,0,0,.05);display:flex;align-items:center;gap:.5rem;}
-    .skill img{width:24px;height:24px;}
-    .profil-img{width:150px;height:150px;border-radius:50%;object-fit:cover;margin-bottom:1rem;box-shadow:0 4px 12px rgba(0,0,0,.3);}  
+    body {
+      margin: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+    header {
+      background: #1e293b;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    h1 {
+      margin: 0;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: .5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: #1e293b;
+        padding: 1rem 0;
+      }
+      nav.active {
+        display: flex;
+      }
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .profil-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,.3);
+    }
+    .btn {
+      display: inline-block;
+      background: #3b82f6;
+      color: #fff;
+      padding: .6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: .1s transform;
+    }
+    .btn:active {
+      transform: scale(.96);
+      background: #5e7693;
+    }
+
+    .section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      border-bottom: 2px solid #415a77;
+      padding-bottom: 4px;
+      margin-top: 0;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .skill {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,.05);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .skill img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.05);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      background: #1e293b;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Portofolio Andra</h1>
-    <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="navMenu">
       <a href="#profil">Profil</a>
       <a href="#skill">Skill</a>
       <a href="#projek">Projek</a>
       <a href="#cv">CV</a>
       <a href="#kontak">Kontak</a>
     </nav>
-  </header>  <section class="hero" data-aos="fade-down">
-    <img src="https://i.postimg.cc/8fJxPw9b/pp-portfolio.jpg" alt="Foto Profil Andra">
-    <h1>Andra Lutfiansyah Marshal</h1>
-    <p class="typewriter" id="typing"></p>
-    <a class="btn" href="#cv">Lihat CV Saya</a>
-  </section>  <section id="profil" class="section" data-aos="fade-up">
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <img src="https://i.postimg.cc/8fJxPw9b/pp-portfolio.jpg" alt="Foto Profil Andra" class="profil-img" />
+    <h2>Andra Lutfiansyah Marshal</h2>
+    <a href="cv-andra.pdf" class="btn" download>Lihat CV Saya</a>
+  </section>
+
+  <section id="profil" class="section" data-aos="fade-up">
     <h2>👤 Profil</h2>
     <p>Halo! Saya <strong>Andra Lutfiansyah Marshal</strong>, pemula yang sedang membangun portofolio web dan bertekad mengubah pola pikir manusia agar lebih maju.</p>
-  </section>  <section id="skill" class="section" data-aos="fade-up">
+  </section>
+
+  <section id="skill" class="section" data-aos="fade-up">
     <h2>🛠️ Skill</h2>
     <div class="skills">
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">HTML</div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">CSS</div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">JavaScript</div>
     </div>
-  </section>  <section id="projek" class="section" data-aos="fade-up">
+  </section>
+
+  <section id="projek" class="section" data-aos="fade-up">
     <h2>📁 Projek</h2>
     <div class="card" data-aos="flip-up">
       <h3>Web Pribadi</h3>
       <p>Portofolio statis di-hosting via GitHub Pages.</p>
       <a class="btn" href="https://sh6wm3.github.io/Marshalweb/" target="_blank">Lihat Web</a>
     </div>
-  </section>  <section id="cv" class="section" data-aos="fade-up">
+  </section>
+
+  <section id="cv" class="section" data-aos="fade-up">
     <h2>📄 Curriculum Vitae</h2>
     <div class="card">
       <p><strong>Pengalaman Kerja:</strong></p>
@@ -92,27 +211,27 @@
       </ul>
       <a class="btn" href="cv-andra.pdf" download>Download CV PDF</a>
     </div>
-  </section>  <section id="kontak" class="section" data-aos="fade-up">
+  </section>
+
+  <section id="kontak" class="section" data-aos="fade-up">
     <h2>📬 Kontak</h2>
     <p>📱 WhatsApp: <a href="https://wa.me/628990097574" target="_blank">0899-0097-574</a></p>
     <p>📸 Instagram: <a href="https://instagram.com/MarshalVlaouse" target="_blank">@MarshalVlaouse</a></p>
     <p>📧 Gmail: <a href="mailto:andralutfiansyahforte@gmail.com">andralutfiansyahforte@gmail.com</a></p>
-  </section>  <footer data-aos="fade-up">
+  </section>
+
+  <footer data-aos="fade-up">
     <p>© 2025 Andra Lutfiansyah Marshal</p>
-  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>AOS.init();</script>  <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>  <script>
-    new TypeIt("#typing", {
-      speed: 50,
-      waitUntilVisible: true,
-      loop: true,
-    })
-    .type("Barista", { delay: 800 })
-    .delete(null, { delay: 500 })
-    .type("Head Barista", { delay: 800 })
-    .delete(null, { delay: 500 })
-    .type("Web Developer", { delay: 800 })
-    .delete(null, { delay: 500 })
-    .type("SA-MP Developer", { delay: 800 })
-    .delete(null, { delay: 500 })
-    .go();
-  </script></body>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleMenu() {
+      const nav = document.getElementById("navMenu");
+      nav.classList.toggle("active");
+    }
+  </script>
+</body>
 </html>
