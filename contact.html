@@ -3,148 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kontak Andra</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Kontak Saya | Marshal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #0e0e0e;
-      color: white;
-      padding: 40px 20px;
+      color: #fff;
+    }
+
+    header {
+      padding: 20px;
       text-align: center;
-    }
-    h1 {
-      color: #ff0055;
-      margin-bottom: 30px;
+      background-color: #1c1c2c;
+      border-bottom: 1px solid #333;
     }
 
-    .step {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-      display: none;
+    header h1 {
+      color: #ff0066;
     }
 
-    .step.active {
-      opacity: 1;
-      transform: translateY(0);
-      display: block;
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      background: #1a1a2f;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+    }
+
+    .contact-item:hover {
+      background: #292947;
     }
 
     .contact-icon {
-      font-size: 40px;
-      color: #ff0055;
-      margin-bottom: 15px;
-    }
-    .contact-detail {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
+      font-size: 28px;
+      color: #ff0066;
+      margin-right: 15px;
+      width: 40px;
+      text-align: center;
     }
 
-    a {
-      color: white;
+    .contact-text {
+      font-size: 16px;
+    }
+
+    .contact-text a {
+      color: #fff;
       text-decoration: none;
     }
 
-    .nav-btn {
-      background-color: #ff0055;
-      color: white;
-      padding: 10px 20px;
-      margin: 15px 10px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .nav-btn:hover {
-      background-color: #ff3366;
+    .contact-text a:hover {
+      text-decoration: underline;
     }
 
-    .back-home {
+    .back-btn {
       display: inline-block;
       margin-top: 40px;
-      text-decoration: none;
-      font-weight: bold;
+      text-align: center;
+      color: #ff0066;
+      border: 2px solid #ff0066;
       padding: 10px 24px;
-      border-radius: 8px;
-      background-color: transparent;
-      color: #ff0055;
-      border: 2px solid #ff0055;
-      transition: all 0.3s ease;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
-    .back-home:hover {
-      background-color: #ff0055;
-      color: white;
+    .back-btn:hover {
+      background: #ff0066;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <h1>Kontak Saya</h1>
+  <header>
+    <h1>Kontak Saya</h1>
+  </header>
 
-  <div class="step active">
-    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-    <div class="contact-detail">andralutfiansyahforte@gmail.com</div>
+  <div class="container">
+    <div class="contact-item">
+      <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+      <div class="contact-text"><a href="https://wa.me/628990097574" target="_blank">0899-0097-574 (WhatsApp)</a></div>
+    </div>
+
+    <div class="contact-item">
+      <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+      <div class="contact-text"><a href="mailto:marshal@example.com">marshal@example.com (Gmail)</a></div>
+    </div>
+
+    <div class="contact-item">
+      <div class="contact-icon"><i class="fab fa-discord"></i></div>
+      <div class="contact-text">marshaldev#1234 (Discord)</div>
+    </div>
+
+    <div class="contact-item">
+      <div class="contact-icon"><i class="fab fa-github"></i></div>
+      <div class="contact-text"><a href="https://github.com/sh6wm3" target="_blank">github.com/sh6wm3</a></div>
+    </div>
+
+    <div style="text-align: center;">
+      <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+    </div>
   </div>
-
-  <div class="step">
-    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-    <div class="contact-detail"><a href="https://wa.me/628990097574" target="_blank">WhatsApp: 0899-0097-574</a></div>
-  </div>
-
-  <div class="step">
-    <div class="contact-icon"><i class="fab fa-github"></i></div>
-    <div class="contact-detail"><a href="https://github.com/sh6wm3" target="_blank">GitHub: sh6wm3</a></div>
-  </div>
-
-  <div class="step">
-    <div class="contact-icon"><i class="fab fa-discord"></i></div>
-    <div class="contact-detail">Discord: Andra#1234</div>
-  </div>
-
-  <div>
-    <button class="nav-btn" onclick="prevStep()">Sebelumnya</button>
-    <button class="nav-btn" onclick="nextStep()">Selanjutnya</button>
-  </div>
-
-  <a href="index.html" class="back-home">← Kembali ke Beranda</a>
-
-  <script>
-    let current = 0;
-    const steps = document.querySelectorAll('.step');
-
-    function showStep(index) {
-      steps.forEach((s, i) => {
-        s.classList.remove('active');
-        if (i === index) {
-          setTimeout(() => s.classList.add('active'), 50); // animasi masuk
-        }
-      });
-    }
-
-    function nextStep() {
-      if (current < steps.length - 1) {
-        current++;
-        showStep(current);
-      }
-    }
-
-    function prevStep() {
-      if (current > 0) {
-        current--;
-        showStep(current);
-      }
-    }
-
-    showStep(current);
-  </script>
 
 </body>
 </html>
