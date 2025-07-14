@@ -3,145 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marshal - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Andra Marshal | Portofolio</title>
+
+  <!-- Font Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Klik Sound -->
+  <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_841b95f7b6.mp3"></audio>
+
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0e0e0e;
-      color: #fff;
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;background:#0e0e0e;color:#fff}
+
+    header{
+      background:#0e0e0e;border-bottom:1px solid #222;padding:18px 32px;
+      position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between}
+    header h1{color:#ff0055;font-size:1.5rem}
+    .nav-links a{color:#fff;text-decoration:none;margin-left:24px;transition:.3s}
+    .nav-links a:hover{color:#ff0055}
+
+    .burger{display:none;font-size:1.8rem;color:#ff0055;background:none;border:none;cursor:pointer}
+    .side-menu{
+      position:fixed;top:0;right:-260px;width:260px;height:100vh;background:#0e0e0e;
+      box-shadow:-4px 0 10px rgba(0,0,0,.5);transition:.35s;padding:80px 24px;z-index:999}
+    .side-menu a{display:block;margin:16px 0;color:#fff;text-decoration:none;font-weight:600}
+    .side-menu.open{right:0}
+    .overlay{
+      position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px);
+      opacity:0;pointer-events:none;transition:.35s;z-index:998}
+    .overlay.show{opacity:1;pointer-events:all}
+
+    .section{padding:80px 40px}
+    .btn{display:inline-block;padding:12px 28px;background:#ff0055;border-radius:8px;
+      color:#fff;text-decoration:none;font-weight:700;margin-top:28px;transition:.25s}
+    .btn:hover{background:#ff3366}
+
+    .hero{
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+      gap:32px;min-height:65vh;justify-content:center
     }
+    .hero h2{font-size:3rem;color:#ff0055;margin-bottom:10px}
+    .typing-text{font-size:1.1rem;line-height:1.8;min-height:130px;white-space:pre-wrap}
 
-    header {
-      background-color: #121212;
-      padding: 1rem 2rem;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #ff007f;
-    }
+    .skills ul,.knowledge ul{list-style:none;padding:0}
+    .skills li,.knowledge li{background:#1c1c1c;margin:10px 0;padding:12px;
+      border-left:4px solid #ff0055;border-radius:6px}
+    .about p{max-width:600px;line-height:1.7}
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #ff007f;
-    }
+    .project-card{background:#1c1c1c;padding:20px;border-radius:10px;margin:12px 0;
+      border-left:4px solid #ff0055}
+    .project-card a{color:#ff3366;text-decoration:none;font-weight:700}
 
-    nav a {
-      color: #fff;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
+    .click-star{position:fixed;font-size:24px;color:#ff0055;pointer-events:none;
+      animation:explode 1s ease-out forwards;z-index:9999}
+    @keyframes explode{from{opacity:1;transform:scale(1) translateY(0)}
+                       to{opacity:0;transform:scale(2) translateY(-50px)}}
 
-    nav a:hover {
-      color: #ff007f;
-    }
-
-    .hero {
-      padding: 7rem 2rem 2rem;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #ccc;
-    }
-
-    .projects {
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .project-card {
-      background-color: #1c1c1c;
-      border-left: 4px solid #ff007f;
-      padding: 1rem;
-      border-radius: 12px;
-    }
-
-    .project-card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-
-    .project-card h2 {
-      margin: 0;
-      color: #ffffff;
-      font-size: 1.2rem;
-    }
-
-    .project-card p {
-      color: #ccc;
-      margin-top: 0.3rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 3rem;
-      }
-
-      .projects {
-        max-width: 800px;
-        margin: 0 auto;
-      }
+    @media(max-width:768px){
+      .burger{display:block}
+      .nav-links{display:none}
     }
   </style>
 </head>
 <body>
 
+  <!-- overlay & side menu -->
+  <div class="overlay" id="overlay"></div>
+  <nav class="side-menu" id="side-menu">
+    <a href="#beranda">Beranda</a>
+    <a href="#about">Tentang</a>
+    <a href="#skills">Skill</a>
+    <a href="#projek-web">Projek Andra Marshal</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Kontak</a>
+  </nav>
+
+  <!-- Header -->
   <header>
-    <div class="logo">Marshal</div>
-    <nav>
-      <a href="index.html">Beranda</a>
-      <a href="profile.html">Profil</a>
-      <a href="skill.html">Skill</a>
-      <a href="project.html">Projek</a>
+    <h1>Marshal</h1>
+    <div class="nav-links">
+      <a href="#beranda">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="#skills">Skill</a>
+      <a href="#projek-web">Projek Andra Marshal</a>
       <a href="cv.html">CV</a>
       <a href="contact.html">Kontak</a>
-    </nav>
+    </div>
+    <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
   </header>
 
-  <section class="hero">
-    <h1>Selamat Datang di Portfolio Marshal</h1>
-    <p>Membangun masa depan dengan kreativitas dan semangat profesional</p>
-  </section>
-
-  <section class="projects">
-    <div class="project-card">
-      <h2>💻 Forum Luminar RP</h2>
-      <p>Tampilan awal forum SA-MP bertema gelap, UCP, info admin & rules aesthetic.</p>
-      <img src="https://raw.githubusercontent.com/sh6wm3/Marshalweb/main/file_00000000901061f7b28958c7bd95b3d7.png" alt="Forum Luminar RP">
-      <p><em>*Screenshot forum awal dari Luminar RP</em></p>
+  <!-- Hero -->
+  <section id="beranda" class="section hero">
+    <div class="hero-text">
+      <h2>Halo, Saya Andra!</h2>
+      <p class="typing-text"></p>
+      <a href="cv.html" class="btn">Lihat CV Saya</a>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Marshal. All rights reserved.
-  </footer>
+  <!-- About -->
+  <section id="about" class="section about">
+    <h2>Tentang Saya</h2>
+    <p>Saya adalah developer bervisi besar: membangun ekosistem web & server-side
+       yang andal, serta menciptakan pengalaman gameplay lewat scripting dan
+       gamemode GTA San Andreas Multiplayer (SA-MP). Setiap baris kode adalah langkah
+       strategis menuju inovasi berikutnya—ditulis dengan disiplin, kreativitas
+       dan rasa ingin tahu tanpa batas.</p>
+  </section>
 
+  <!-- Skills -->
+  <section id="skills" class="section skills">
+    <h2>Skill Coding</h2>
+    <ul>
+      <li>HTML & Semantic Markup</li>
+      <li>Responsive CSS / Flexbox / Grid</li>
+      <li>JavaScript dasar & DOM manipulation</li>
+      <li>Deploy statis (GitHub Pages / Netlify)</li>
+    </ul>
+  </section>
+
+  <!-- Projek Website & Forum -->
+  <section id="projek-web" class="section knowledge">
+    <h2>Projek Andra Marshal</h2>
+
+    <div class="project-card">
+      <strong>💻 Forum Luminar RP</strong><br>
+      Tampilan awal forum SA-MP bertema gelap, UCP, info admin & rules aesthetic.<br><br>
+      <img src="https://raw.githubusercontent.com/sh6wm3/Marshalweb/main/file_00000000901061f7b28958c7bd95b3d7.png"
+           alt="Forum Luminar RP"
+           style="width:100%;border-radius:8px;margin-top:10px" /><br><br>
+      <span style="color:#ccc;font-size:0.9rem">*Screenshot forum Luminar RP</span>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="section contact">
+    <h2>Kontak Saya</h2>
+    <p>Ingin berkolaborasi? Klik tombol di bawah untuk halaman kontak.</p>
+    <a href="contact.html" class="btn"><i class="fas fa-paper-plane" style="margin-right:8px"></i>Hubungi Saya</a>
+  </section>
+
+  <!-- Script -->
+  <script>
+    const text = "Seorang Barista yang terlatih dalam kesabaran, konsistensi dan cita rasa, kini menjelma menjadi Developer yang berfokus pada efisiensi, kreativitas dan teknologi.\n\nSaya aktif membangun sistem interaktif, serta gamemode & scripting GTA San Andreas Multiplayer (SA-MP).\n\nKeahlian bukan hanya apa yang kita tahu, tetapi bagaimana kita terus berkembang.";
+    let idx = 0;
+    function type() {
+      if (idx < text.length) {
+        document.querySelector('.typing-text').innerHTML += text.charAt(idx++);
+        setTimeout(type, 20);
+      }
+    }
+    window.addEventListener('load', type);
+
+    document.addEventListener('click', e => {
+      const star = document.createElement('div');
+      star.className = 'click-star';
+      star.textContent = '★';
+      star.style.left = `${e.pageX}px`;
+      star.style.top  = `${e.pageY}px`;
+      document.body.appendChild(star);
+      document.getElementById('click-sound').play();
+      setTimeout(()=>star.remove(), 1000);
+    });
+
+    const burger = document.getElementById('burger');
+    const side   = document.getElementById('side-menu');
+    const over   = document.getElementById('overlay');
+    burger.addEventListener('click', ()=>{side.classList.add('open');over.classList.add('show');});
+    over.addEventListener('click', ()=>{side.classList.remove('open');over.classList.remove('show');});
+  </script>
 </body>
 </html>
