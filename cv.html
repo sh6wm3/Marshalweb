@@ -4,94 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV - Andra Lutfiansyah Marshal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
     }
     body {
       margin: 0;
-      background: #fff;
-      color: #1e293b;
-      line-height: 1.6;
+      background: #f9fafb;
+      color: #1f2937;
     }
     header {
-      background: #fff;
-      padding: 1.5rem 2rem;
-      border-bottom: 1px solid #e2e8f0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
+      padding: 2rem 1rem 1rem;
     }
-    header h1 {
-      font-size: 1.5rem;
-      margin: 0;
-      font-weight: 700;
-      color: #0f172a;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      color: #0f172a;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .container {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-    .profile-pic {
+    header img {
       width: 140px;
       height: 140px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    h1 {
+      margin: 1rem 0 0.5rem;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .section {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
     }
     h2 {
-      margin-top: 2rem;
-      border-left: 4px solid #f43f5e;
-      padding-left: 1rem;
-      color: #0f172a;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #111827;
+      border-bottom: 2px solid #ef4444;
+      display: inline-block;
+      padding-bottom: 4px;
     }
     ul {
       padding-left: 1.5rem;
-    }
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      padding: 1rem;
-      background: #f1f5f9;
-      font-size: 0.9rem;
-      color: #64748b;
+      margin-top: 0.5rem;
     }
     .btn-download {
       display: inline-block;
-      background: #f43f5e;
-      color: white;
-      padding: 0.7rem 1.2rem;
+      background: #ef4444;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
       border-radius: 6px;
       text-decoration: none;
-      margin-top: 1rem;
+      margin-top: 2rem;
+      transition: background 0.2s;
+    }
+    .btn-download:hover {
+      background: #dc2626;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #6b7280;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Andra Marshal</h1>
-    <nav>
-      <a href="index.html">← Kembali ke Beranda</a>
-    </nav>
+    <img src="https://i.postimg.cc/8fJxPw9b/pp-portfolio.jpg" alt="Foto Andra">
+    <h1>Curriculum Vitae</h1>
+    <p><strong>Andra Lutfiansyah Marshal</strong></p>
   </header>
 
-  <div class="container">
-    <div style="text-align:center">
-      <img src="https://i.postimg.cc/8fJxPw9b/pp-portfolio.jpg" alt="Foto Andra" class="profile-pic">
-      <h2>Curriculum Vitae</h2>
-    </div>
-
-    <h2>Pengalaman Kerja</h2>
+  <section class="section">
+    <h2>📄 Pengalaman Kerja</h2>
     <ul>
       <li>Yukscoffe – 6 Bulan (Barista)</li>
       <li>Jack Coffe – 1 Tahun (Barista)</li>
@@ -101,29 +89,34 @@
       <li>Varuna Cafe – 8 Bulan (Barista)</li>
       <li>Black Beans Cafe – 1 Tahun (Head Barista)</li>
     </ul>
+  </section>
 
-    <h2>Soft Skill</h2>
+  <section class="section">
+    <h2>🎯 Soft Skill</h2>
     <ul>
       <li>Disiplin & Jujur</li>
       <li>Bisa bekerja dalam tim</li>
       <li>Memahami SOP & kerja efisien</li>
     </ul>
+  </section>
 
-    <h2>About Work Coffee</h2>
+  <section class="section">
+    <h2>☕ Tentang Dunia Kopi</h2>
     <ul>
       <li>Kreatif dalam meracik dan menciptakan minuman kopi</li>
       <li>Belajar & eksplorasi Latte Art / Manual Brewing</li>
       <li>Cek kualitas makanan/minuman</li>
       <li>Check up mesin kopi saat opening & closing</li>
     </ul>
+  </section>
 
-    <div style="text-align:center">
-      <a href="cv-andra.pdf" class="btn-download" download>📄 Download CV (PDF)</a>
-    </div>
-  </div>
+  <section class="section" style="text-align:center;">
+    <a class="btn-download" href="cv-andra.pdf" download>📥 Download CV PDF</a>
+  </section>
 
   <footer>
-    &copy; 2025 Andra Lutfiansyah Marshal. All rights reserved.
+    © 2025 Andra Lutfiansyah Marshal
   </footer>
+
 </body>
 </html>
