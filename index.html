@@ -6,251 +6,193 @@
   <title>Andra Marshal | Portofolio</title>
 
   <!-- Font Montserrat -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <!-- Efek klik bintang & suara -->
+  <!-- klik-sound -->
   <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_841b95f7b6.mp3"></audio>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #0e0e0e;
-      color: white;
-    }
-    header {
-      background-color: #0e0e0e;
-      padding: 20px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #222;
-    }
-    header h1 {
-      color: #ff0055;
-      font-size: 1.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      color: #ff0055;
-    }
-    .section {
-      padding: 80px 40px;
-    }
+    /* ---------- Reset dasar ---------- */
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;background:#0e0e0e;color:#fff}
 
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-    }
+    /* ---------- Header & Nav ---------- */
+    header{
+      background:#0e0e0e;border-bottom:1px solid #222;padding:18px 32px;
+      position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between}
+    header h1{color:#ff0055;font-size:1.5rem}
+    .nav-links a{color:#fff;text-decoration:none;margin-left:24px;transition:.3s}
+    .nav-links a:hover{color:#ff0055}
 
-    .hero-text {
-      flex: 1 1 300px;
-    }
+    /* hamburger */
+    .burger{display:none;font-size:1.8rem;color:#ff0055;background:none;border:none;cursor:pointer}
+    /* panel menu geser */
+    .side-menu{
+      position:fixed;top:0;right:-260px;width:260px;height:100vh;background:#0e0e0e;
+      box-shadow:-4px 0 10px rgba(0,0,0,.5);transition:.35s;padding:80px 24px;z-index:999}
+    .side-menu a{display:block;margin:16px 0;color:#fff;text-decoration:none;font-weight:600}
+    .side-menu.open{right:0}
+    .overlay{
+      position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px);
+      opacity:0;pointer-events:none;transition:.35s;z-index:998}
+    .overlay.show{opacity:1;pointer-events:all}
 
-    .hero-text h2 {
-      font-size: 3rem;
-      color: #ff0055;
-      margin-bottom: 10px;
-    }
+    /* ---------- Bagian umum ---------- */
+    .section{padding:80px 40px}
+    .btn{display:inline-block;padding:12px 28px;background:#ff0055;border-radius:8px;
+      color:#fff;text-decoration:none;font-weight:700;margin-top:28px;transition:.25s}
+    .btn:hover{background:#ff3366}
 
-    .typing-text {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      min-height: 130px;
-      white-space: pre-wrap;
-    }
+    /* ---------- Hero ---------- */
+    .hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:space-between}
+    .hero h2{font-size:3rem;color:#ff0055;margin-bottom:10px}
+    .typing-text{font-size:1.1rem;line-height:1.8;min-height:130px;white-space:pre-wrap}
+    .hero img{flex:1 1 260px;max-width:400px;width:100%;border-radius:20px;
+      box-shadow:0 0 30px #ff0055;animation:float 3s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-    .hero img {
-      flex: 1 1 250px;
-      width: 100%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px #ff0055;
-      animation: float 3s ease-in-out infinite;
-    }
+    /* ---------- About / Skills / Knowledge ---------- */
+    .skills ul,.knowledge ul{list-style:none;padding:0}
+    .skills li,.knowledge li{background:#1c1c1c;margin:10px 0;padding:12px;
+      border-left:4px solid #ff0055;border-radius:6px}
+    .about p{max-width:600px;line-height:1.7}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
+    /* ---------- Project SA-MP ---------- */
+    .project-card{background:#1c1c1c;padding:20px;border-radius:10px;margin:12px 0;
+      border-left:4px solid #ff0055}
+    .project-card a{color:#ff3366;text-decoration:none;font-weight:700}
 
-    .btn {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: #ff0055;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background-color: #ff3366;
-    }
+    /* ---------- klik-bintang ---------- */
+    .click-star{position:fixed;font-size:24px;color:#ff0055;pointer-events:none;
+      animation:explode 1s ease-out forwards;z-index:9999}
+    @keyframes explode{from{opacity:1;transform:scale(1) translateY(0)}
+                       to{opacity:0;transform:scale(2) translateY(-50px)}}
 
-    .skills, .about, .knowledge {
-      margin-top: 60px;
-    }
-
-    .skills ul, .knowledge ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .skills li, .knowledge li {
-      background: #1c1c1c;
-      margin: 10px 0;
-      padding: 12px;
-      border-left: 4px solid #ff0055;
-      border-radius: 6px;
-    }
-
-    .about p {
-      max-width: 600px;
-      line-height: 1.7;
-    }
-
-    .contact p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    /* Efek klik bintang */
-    .click-star {
-      position: fixed;
-      font-size: 24px;
-      color: #ff0055;
-      pointer-events: none;
-      animation: explode 1s ease-out forwards;
-      z-index: 9999;
-    }
-
-    @keyframes explode {
-      0% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(2) translateY(-50px);
-      }
+    /* ---------- Responsif ---------- */
+    @media(max-width:768px){
+      .burger{display:block}
+      .nav-links{display:none}
+      .hero{flex-direction:column;text-align:center}
     }
   </style>
 </head>
 <body>
+  <!-- overlay & side menu -->
+  <div class="overlay" id="overlay"></div>
+  <nav class="side-menu" id="side-menu">
+    <a href="#beranda">Beranda</a>
+    <a href="#about">Tentang</a>
+    <a href="#skills">Skill</a>
+    <a href="#project">Proyek SA-MP</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Kontak</a>
+  </nav>
+
   <header>
     <h1>Marshal</h1>
-    <nav>
-      <a href="index.html">Beranda</a>
+    <div class="nav-links">
+      <a href="#beranda">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="#skills">Skill</a>
+      <a href="#project">Proyek SA-MP</a>
       <a href="cv.html">CV</a>
       <a href="contact.html">Kontak</a>
-    </nav>
+    </div>
+    <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
   </header>
 
-  <section class="section hero">
+  <!-- ===== HERO ===== -->
+  <section id="beranda" class="section hero">
     <div class="hero-text">
       <h2>Halo, Saya Andra!</h2>
       <p class="typing-text"></p>
       <a href="cv.html" class="btn">Lihat CV Saya</a>
     </div>
-    <img src="https://i.postimg.cc/JtDLDL2r/foto.jpg" alt="Foto Andra" />
+    <!-- perbaikan URL langsung jpg/png supaya aman di desktop -->
+    <img src="https://i.postimg.cc/JtDLDL2r/foto.jpg" alt="Foto Andra"/>
   </section>
 
-  <section class="section about">
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section about">
     <h2>Tentang Saya</h2>
-    <p>
-      Saya adalah seorang developer yang memiliki visi besar untuk masa depan. Memulai perjalanan dari dasar, saya kini aktif dalam dunia pengembangan web dan pengembangan sistem server, termasuk scripting dan gamemode untuk GTA San Andreas Multiplayer (SAMP). Saya percaya bahwa teknologi adalah alat untuk menciptakan perubahan besar, dan saya terus mengasah keahlian saya dengan semangat, dedikasi, dan keinginan tanpa batas untuk belajar dan berkembang. Setiap baris kode adalah langkah menuju mimpi yang lebih besar.
-    </p>
+    <p>Saya adalah developer bervisi besar: membangun ekosistem web & server-side
+       yang andal, serta menciptakan pengalaman gameplay lewat scripting dan
+       gamemode GTA San Andreas Multiplayer (SA-MP). Setiap baris kode adalah langkah
+       strategis menuju inovasi berikutnya—ditulis dengan disiplin, kreativitas
+       dan rasa ingin tahu tanpa batas.</p>
   </section>
 
-  <section class="section skills">
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section skills">
     <h2>Skill Coding</h2>
     <ul>
-      <li>HTML Dasar</li>
-      <li>CSS Dasar</li>
-      <li>Belajar JavaScript</li>
-      <li>Membangun Website Portofolio</li>
+      <li>HTML & Semantic Markup</li>
+      <li>Responsive CSS / Flexbox / Grid</li>
+      <li>JavaScript dasar & DOM manipulation</li>
+      <li>Deploy statis (GitHub Pages / Netlify)</li>
     </ul>
   </section>
 
-  <section class="section knowledge">
-    <h2>Ilmu Pengetahuan yang Saya Pelajari</h2>
-    <ul>
-      <li>Pola pikir untuk terus berkembang</li>
-      <li>Manajemen waktu dan produktivitas</li>
-      <li>Belajar dari kesalahan dan pengalaman</li>
-      <li>Pengembangan diri & self-discipline</li>
-    </ul>
+  <!-- ===== PROJECT SA-MP ===== -->
+  <section id="project" class="section knowledge">
+    <h2>Proyek SA-MP</h2>
+
+    <div class="project-card">
+      <strong>🌐 CityLife RolePlay v1.2</strong><br>
+      Gamemode RP modular dengan sistem inventory, housing &amp; job
+      scriptable.<br>
+      <a href="https://github.com/sh6wm3/citylife-rp" target="_blank">Repo GitHub →</a>
+    </div>
+
+    <div class="project-card">
+      <strong>🚗 Drift Arena Mini-Game</strong><br>
+      Filterscript arena drift dengan kalkulasi skor real-time &amp; leaderboard
+      MySQL.<br>
+      <a href="https://github.com/sh6wm3/drift-arena" target="_blank">Repo GitHub →</a>
+    </div>
   </section>
 
-  <section class="section contact" id="kontak">
+  <!-- ===== CTA KONTAK ===== -->
+  <section class="section contact">
     <h2>Kontak Saya</h2>
-    <p>Ingin menghubungi saya? Klik tombol di bawah ini untuk membuka halaman kontak lengkap saya.</p>
-    <a href="contact.html" class="btn">
-      <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
-      Buka Halaman Kontak
-    </a>
+    <p>Ingin berkolaborasi? Klik tombol di bawah untuk halaman kontak.</p>
+    <a href="contact.html" class="btn"><i class="fas fa-paper-plane" style="margin-right:8px"></i>Hubungi Saya</a>
   </section>
 
+  <!-- ==== SCRIPT ==== -->
   <script>
-    const text =
-      "Seorang Barista yang terlatih dalam kesabaran, konsistensi, dan cita rasa, kini menjelma menjadi seorang Developer yang berfokus pada efisiensi, kreativitas, dan teknologi.\n\nSaya aktif membangun sistem dan pengalaman interaktif, serta mengembangkan berbagai gamemode dan scripting dalam dunia GTA San Andreas Multiplayer (SAMP).\n\nSaya percaya bahwa keahlian bukan hanya tentang apa yang kita tahu, tapi tentang bagaimana kita terus berkembang, hari demi hari.";
-
-    let index = 0;
-    function ketik() {
-      if (index < text.length) {
-        document.querySelector('.typing-text').innerHTML += text.charAt(index);
-        index++;
-        setTimeout(ketik, 20);
+    /* -------- Typing effect -------- */
+    const text = "Seorang Barista yang terlatih dalam kesabaran, konsistensi dan cita rasa, kini menjelma menjadi Developer yang berfokus pada efisiensi, kreativitas dan teknologi.\n\nSaya aktif membangun sistem interaktif, serta gamemode & scripting GTA San Andreas Multiplayer (SA-MP).\n\nKeahlian bukan hanya apa yang kita tahu, tetapi bagaimana kita terus berkembang.";
+    let idx = 0;
+    function type() {
+      if (idx < text.length) {
+        document.querySelector('.typing-text').innerHTML += text.charAt(idx++);
+        setTimeout(type, 20);
       }
     }
-    window.onload = ketik;
+    window.addEventListener('load', type);
 
-    // Efek klik bintang + suara
-    document.addEventListener('click', function (e) {
+    /* -------- Klik bintang + suara -------- */
+    document.addEventListener('click', e => {
       const star = document.createElement('div');
       star.className = 'click-star';
       star.textContent = '★';
       star.style.left = `${e.pageX}px`;
-      star.style.top = `${e.pageY}px`;
+      star.style.top  = `${e.pageY}px`;
       document.body.appendChild(star);
-
-      const sound = document.getElementById('click-sound');
-      if (sound) {
-        sound.currentTime = 0;
-        sound.play();
-      }
-
-      setTimeout(() => {
-        star.remove();
-      }, 1000);
+      document.getElementById('click-sound').play();
+      setTimeout(()=>star.remove(), 1000);
     });
+
+    /* -------- Slide-in menu -------- */
+    const burger = document.getElementById('burger');
+    const side   = document.getElementById('side-menu');
+    const over   = document.getElementById('overlay');
+    burger.addEventListener('click', ()=>{side.classList.add('open');over.classList.add('show');});
+    over.addEventListener('click', ()=>{side.classList.remove('open');over.classList.remove('show');});
   </script>
 </body>
 </html>
