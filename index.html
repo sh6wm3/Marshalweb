@@ -90,7 +90,7 @@
     .btn:hover {
       background-color: #ff3366;
     }
-    .skills, .about, .contact, .knowledge {
+    .skills, .about, .knowledge {
       margin-top: 60px;
     }
     .skills ul, .knowledge ul {
@@ -108,27 +108,10 @@
       max-width: 600px;
       line-height: 1.7;
     }
-    .contact ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .contact li {
-      margin: 12px 0;
+    .contact p {
       font-size: 1.1rem;
+      margin-bottom: 20px;
     }
-    .contact i {
-      color: #ff0055;
-      margin-right: 10px;
-    }
-    .contact a {
-      color: #ffffff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    .contact a:hover {
-      color: #ff0055;
-    }
-
     @media (max-width: 768px) {
       .hero {
         grid-template-columns: 1fr;
@@ -143,7 +126,7 @@
     <nav>
       <a href="index.html">Beranda</a>
       <a href="cv.html">CV</a>
-      <a href="#kontak">Kontak</a>
+      <a href="contact.html">Kontak</a>
     </nav>
   </header>
 
@@ -183,24 +166,11 @@
 
   <section class="section contact" id="kontak">
     <h2>Kontak Saya</h2>
-    <ul>
-      <li>
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:andralutfiansyahforte@gmail.com">andralutfiansyahforte@gmail.com</a>
-      </li>
-      <li>
-        <i class="fab fa-whatsapp"></i>
-        <a href="https://wa.me/628990097574" target="_blank">WhatsApp: 08990097574</a>
-      </li>
-      <li>
-        <i class="fab fa-github"></i>
-        <a href="https://github.com/sh6wm3" target="_blank">GitHub: sh6wm3</a>
-      </li>
-      <li>
-        <i class="fab fa-discord"></i>
-        <a href="https://discordapp.com/users/123456789012345678" target="_blank">Discord: Andra#1234</a>
-      </li>
-    </ul>
+    <p>Ingin menghubungi saya? Klik tombol di bawah ini untuk membuka halaman kontak lengkap saya.</p>
+    <a href="contact.html" class="btn">
+      <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+      Buka Halaman Kontak
+    </a>
   </section>
 </body>
 </html>
