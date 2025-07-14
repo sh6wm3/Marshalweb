@@ -1,123 +1,138 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Andra Marshal | Developer Forum SA-MP</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marshal - Developer Forum SA-MP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    :root {
-      --primary: #66fcf1;
-      --bg: #0b0c10;
-      --fg: #ffffff;
-      --card: #1f2833;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0b0c10;
-      --fg: #ffffff;
-    }
-
-    [data-theme="light"] {
-      --bg: #f4f4f4;
-      --fg: #111111;
-      --card: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Outfit', sans-serif;
-      scroll-behavior: smooth;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0e0e1a;
+      color: white;
     }
 
-    nav {
+    header {
       position: fixed;
+      top: 0;
       width: 100%;
-      background: var(--card);
-      padding: 1rem 2rem;
+      background: #1a1a2e;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       z-index: 1000;
-      top: 0;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #f50057;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
     }
 
     nav a {
-      color: var(--primary);
-      margin: 0 1rem;
       text-decoration: none;
+      color: white;
+      font-weight: 600;
     }
 
-    nav a:hover {
-      color: var(--fg);
-    }
-
-    .toggle-dark {
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
       cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #1a1a2e;
+        position: absolute;
+        top: 4rem;
+        right: 2rem;
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      nav.active ul {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
     }
 
     section {
-      padding: 120px 10% 60px;
-      min-height: 100vh;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: var(--primary);
+      padding: 6rem 2rem 4rem;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .hero {
       text-align: center;
-      padding-top: 150px;
+      background: linear-gradient(to bottom, #1a1a2e, #0e0e1a);
+      padding-top: 8rem;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
     }
 
-    .typed-text {
-      color: var(--primary);
-      font-weight: bold;
+    .typing-text {
+      color: #f50057;
+      font-size: 1.2rem;
+      animation: typing 3s steps(30, end) infinite;
     }
 
-    .card {
-      background: var(--card);
+    @keyframes typing {
+      0% { width: 0 }
+      50% { width: 100% }
+      100% { width: 0 }
+    }
+
+    h2 {
+      color: #f50057;
+      margin-bottom: 1rem;
+    }
+
+    .skill-list li {
+      margin-bottom: 0.8rem;
+    }
+
+    .project-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: #1a1a2e;
       padding: 1rem;
-      border-radius: 1rem;
-      margin: 1rem 0;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .skill-bar {
-      background: #c5c6c7;
-      height: 10px;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .skill-level {
-      height: 10px;
-      background: var(--primary);
-      border-radius: 20px;
-    }
-
-    .project-img {
-      width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      background: #2c2c47;
+    }
+
+    .project-card img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
     }
 
     .modal {
@@ -128,165 +143,109 @@
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(0, 0, 0, 0.9);
     }
 
     .modal-content {
-      margin: 10% auto;
       display: block;
-      max-width: 80%;
+      margin: 5% auto;
+      max-width: 90%;
     }
 
-    .modal-content img {
-      width: 100%;
-    }
-
-    .button {
-      padding: 0.5rem 1rem;
-      background: var(--primary);
-      border: none;
-      border-radius: 10px;
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: #fff;
+      font-size: 40px;
       cursor: pointer;
-      color: #0b0c10;
-      font-weight: bold;
-      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #1a1a2e;
     }
   </style>
 </head>
-<body data-theme="dark">
 
-  <nav>
-    <div><strong>Andra Marshal</strong></div>
-    <div>
-      <a href="#hero">Beranda</a>
-      <a href="#about">Tentang</a>
-      <a href="#skills">Skill</a>
-      <a href="#services">Jasa</a>
-      <a href="#projects">Projek</a>
-      <a href="#testimoni">Testimoni</a>
-      <a href="cv.html">CV</a>
-      <a href="#contact">Kontak</a>
-      <span class="toggle-dark" onclick="toggleDarkMode()">🌓</span>
-    </div>
-  </nav>
+<body>
+  <header>
+    <div class="logo">MarshalDev</div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#hero">Beranda</a></li>
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#skills">Skill</a></li>
+        <li><a href="#projects">Projek</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">&#8942;</div>
+  </header>
 
   <section class="hero" id="hero">
-    <h1>Halo, Gue <span class="typed-text">Developer</span></h1>
-    <p>Spesialis Web & Forum SA-MP</p>
-    <button class="button" onclick="location.href='#services'">Lihat Jasa</button>
+    <h1>Halo Gua Marshal</h1>
+    <p class="typing-text">Seorang Developer Forum SA-MP & Pembuat Website</p>
   </section>
 
-  <section id="about" data-aos="fade-up">
-    <h2>Tentang Gue</h2>
-    <p>Gue adalah developer pemula yang lagi berkembang. Gue bikin forum klasik SA-MP bergaya Luminar RP, UCP, dan website keren lainnya.</p>
+  <section id="about">
+    <h2>Tentang Gua</h2>
+    <p>Gua Marshal, seorang developer yang passionate di dunia pengembangan website, khususnya komunitas game SA-MP. Gua ngebangun forum dengan UI modern, fitur UCP, sistem login, integrasi database, dan desain custom. Gua percaya bahwa komunitas butuh wadah keren, dan gua hadir untuk bantu wujudkan itu. Gua juga menerima jasa pembuatan forum dari nol, fast respons, dan punya pengalaman menangani banyak server SA-MP. Selain itu, gua juga aktif belajar teknologi baru, termasuk JavaScript, MySQL, dan UI responsif agar semua project gua tampil beda dan solid.</p>
   </section>
 
-  <section id="skills" data-aos="fade-up">
+  <section id="skills">
     <h2>Skill Coding</h2>
-    <div class="card">
-      <p>HTML</p>
-      <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
-    </div>
-    <div class="card">
-      <p>CSS</p>
-      <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
-    </div>
-    <div class="card">
-      <p>JavaScript</p>
-      <div class="skill-bar"><div class="skill-level" style="width: 65%;"></div></div>
+    <ul class="skill-list">
+      <li><i class="fab fa-html5"></i> HTML - 90%</li>
+      <li><i class="fab fa-css3-alt"></i> CSS - 85%</li>
+      <li><i class="fab fa-js"></i> JavaScript - 75%</li>
+      <li><i class="fas fa-code"></i> PHP - 80%</li>
+      <li><i class="fas fa-database"></i> MySQL - 70%</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projek Forum SA-MP</h2>
+    <div class="project-gallery">
+      <div class="project-card" onclick="openModal('forum')">
+        <img src="file_00000000901061f7b28958c7bd95b3d7.png" alt="Forum SA-MP">
+        <p>Forum Website GTA SA-MP</p>
+      </div>
     </div>
   </section>
 
-  <section id="services" data-aos="fade-up">
-    <h2>Jasa</h2>
-    <div class="card">
-      <h3>Forum SA-MP</h3>
-      <p>Desain klasik, fitur admin aesthetic, rules, UCP, dan tampilan mirip Luminar RP.</p>
-    </div>
-    <div class="card">
-      <h3>Website Portofolio</h3>
-      <p>Modern, ada animasi, efek scroll, dan responsive.</p>
-    </div>
-  </section>
-
-  <section id="projects" data-aos="fade-up">
-    <h2>Projek Forum</h2>
-    <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/forum-samp.jpg" alt="Forum SA-MP" class="project-img" onclick="openModal(this.src)">
-  </section>
-
-  <section id="testimoni" data-aos="fade-up">
-    <h2>Testimoni Klien</h2>
-    <div class="card">
-      <p><strong>Admin Luminar RP:</strong> Forum-nya rapi, elegan, dan mudah dikustomisasi. Mantap bro!</p>
-    </div>
-    <div class="card">
-      <p><strong>User Forum:</strong> Desainnya klasik tapi modern, suka banget sama tampilannya.</p>
-    </div>
-  </section>
-
-  <section id="contact" data-aos="fade-up">
-    <h2>Kontak</h2>
-    <p>Email: andra@example.com</p>
-    <p>WhatsApp: 08xxxxxxxx</p>
-    <p>Discord: Andra#1234</p>
-    <p><a class="button" href="contact.html">Form Kontak</a></p>
-  </section>
-
-  <!-- Modal Preview -->
-  <div class="modal" id="modal" onclick="closeModal()">
-    <div class="modal-content">
-      <img id="modal-img" src="" alt="Preview">
-    </div>
+  <!-- Modal Preview Gambar -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage" />
+    <div id="caption"></div>
   </div>
 
-  <!-- Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
+  <footer>
+    <p>&copy; 2025 MarshalDev - All Rights Reserved</p>
+  </footer>
 
-    // Dark Mode Toggle
-    function toggleDarkMode() {
-      const body = document.body;
-      const current = body.getAttribute('data-theme');
-      body.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('active');
     }
 
-    // Modal
-    function openModal(src) {
-      document.getElementById("modal-img").src = src;
-      document.getElementById("modal").style.display = "block";
+    function openModal(id) {
+      const modal = document.getElementById('modal');
+      const img = document.getElementById('modalImage');
+      const caption = document.getElementById('caption');
+      modal.style.display = "block";
+      img.src = 'file_00000000901061f7b28958c7bd95b3d7.png';
+      caption.innerText = \"Forum Website GTA SA-MP\";
     }
 
     function closeModal() {
-      document.getElementById("modal").style.display = "none";
+      document.getElementById('modal').style.display = "none";
     }
-
-    // Efek Ketik
-    const typedText = document.querySelector(".typed-text");
-    const words = ["Developer", "Forum Maker", "Freelancer"];
-    let i = 0, j = 0, currentWord = "", isDeleting = false;
-
-    function typeEffect() {
-      if (i < words.length) {
-        if (!isDeleting && j <= words[i].length) {
-          currentWord = words[i].substring(0, j++);
-        } else if (isDeleting && j >= 0) {
-          currentWord = words[i].substring(0, j--);
-        }
-
-        typedText.textContent = currentWord;
-
-        if (j === words[i].length) isDeleting = true;
-        if (j === 0 && isDeleting) {
-          isDeleting = false;
-          i = (i + 1) % words.length;
-        }
-
-        setTimeout(typeEffect, isDeleting ? 50 : 150);
-      }
-    }
-    typeEffect();
   </script>
 </body>
+
 </html>
