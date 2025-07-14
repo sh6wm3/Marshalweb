@@ -1,117 +1,139 @@
-<!DOCTYPE html><html lang="id"><head>
+<!DOCTYPE html>
+<html lang="id">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marshal - Developer Forum SA-MP</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head><body>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #0e0e1a;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      align-items: center;
+      background: #1a1a2e;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f50057;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      cursor: pointer;
+      display: none;
+      color: white;
+    }
+
+    @media(max-width:768px) {
+      .nav ul {
+        flex-direction: column;
+        display: none;
+        background: #1a1a2e;
+        position: absolute;
+        right: 2rem;
+        top: 4rem;
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .nav.active ul {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .hero {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background: linear-gradient(#1a1a2e, #16213e);
+    }
+
+    .typing-text {
+      color: #f50057;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      animation: typing 4s steps(40, end) infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #f50057;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .section {
+      padding: 4rem 2rem;
+    }
+  </style>
+</head>
+
+<body>
   <header class="header">
     <div class="logo">MarshalDev</div>
     <nav class="nav" id="navbar">
       <ul>
-        <li><a href="#hero">Beranda</a></li>
-        <li><a href="#about">Tentang</a></li>
-        <li><a href="#skills">Skill</a></li>
-        <li><a href="#projects">Projek</a></li>
-        <li><a href="contact.html">Kontak</a></li>
-        <li><a href="cv.html">CV</a></li>
+        <li><a href="#hero">🏠 Beranda</a></li>
+        <li><a href="#about">🧑 Tentang</a></li>
+        <li><a href="#skills">💻 Skill</a></li>
+        <li><a href="#projects">📂 Project Web</a></li>
+        <li><a href="contact.html">✉️ Kontak</a></li>
+        <li><a href="cv.html">📄 CV Gua</a></li>
       </ul>
     </nav>
     <div class="menu-toggle" onclick="toggleMenu()">&#8942;</div>
-  </header>  <section class="hero" id="hero">
+  </header>
+
+  <section class="hero" id="hero">
     <h1>Halo Gua Marshal</h1>
     <p class="typing-text">Seorang Developer Forum SA-MP & Pembuat Website</p>
-  </section>  <section id="about" class="section">
+  </section>
+
+  <section id="about" class="section">
     <h2>Tentang Gua</h2>
-    <p>Gua Marshal, seorang developer muda dengan semangat membara di dunia digital. Gua spesialis dalam bikin forum dan website komunitas, terutama untuk dunia GTA SA-MP. Dari awal gua cuma player biasa, sekarang gua jadi penyedia jasa forum yang punya sentuhan estetika dan performa tinggi. Gua percaya bahwa setiap komunitas butuh tempat yang solid buat berkembang, dan gua hadir untuk wujudin itu. Dengan pengalaman, kreativitas, dan fokus gua pada detail, gua bisa bantu lo bangun forum yang bukan cuma jalan, tapi juga keren dilihat dan nyaman dipakai. Selain forum, gua juga paham backend dan frontend, biasa pake HTML, CSS, JS, PHP, dan MySQL. Gua terus berkembang dan ngulik hal baru setiap hari, karena buat gua, jadi developer itu proses tanpa akhir. Gua siap jadi partner digital lo!</p>
-  </section>  <section id="skills" class="section">
-    <h2>Skill Coding</h2>
-    <div class="skills-container">
-      <div class="skill">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML" />
-        <span>HTML</span>
-        <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
-      </div>
-      <div class="skill">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS" />
-        <span>CSS</span>
-        <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
-      </div>
-      <div class="skill">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript" />
-        <span>JavaScript</span>
-        <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
-      </div>
-      <div class="skill">
-        <img src="https://cdn-icons-png.flaticon.com/512/919/919830.png" alt="PHP" />
-        <span>PHP</span>
-        <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
-      </div>
-      <div class="skill">
-        <img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="MySQL" />
-        <span>MySQL</span>
-        <div class="progress"><div class="progress-bar" style="width: 70%"></div></div>
-      </div>
-    </div>
-  </section>  <section id="projects" class="section">
-    <h2>Projek</h2>
-    <div class="project-gallery">
-      <div class="project-card" onclick="openModal('forum')">
-        <img src="file_00000000901061f7b28958c7bd95b3d7.png" alt="Forum SA-MP">
-        <p>Forum Website GTA SA-MP</p>
-      </div>
-    </div>
-  </section>  <div id="modal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImage">
-    <div id="caption"></div>
-  </div>  <footer>
-    <p>&copy; 2025 MarshalDev - All Rights Reserved</p>
-  </footer>  <script>
-    function toggleMenu() {
-      const navbar = document.getElementById('navbar');
-      navbar.classList.toggle('active');
-    }
-
-    function openModal(id) {
-      const modal = document.getElementById('modal');
-      const modalImg = document.getElementById('modalImage');
-      const caption = document.getElementById('caption');
-      modal.style.display = "block";
-      modalImg.src = 'file_00000000901061f7b28958c7bd95b3d7.png';
-      caption.innerText = "Forum Website GTA SA-MP";
-    }
-
-    function closeModal() {
-      document.getElementById('modal').style.display = "none";
-    }
-  </script>  <style>
-    body { font-family: 'Poppins', sans-serif; margin: 0; background: #0e0e1a; color: white; scroll-behavior: smooth; }
-    .header { display: flex; justify-content: space-between; padding: 1rem 2rem; align-items: center; background: #1a1a2e; position: fixed; width: 100%; top: 0; z-index: 999; }
-    .nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    .nav a { color: white; text-decoration: none; font-weight: 600; transition: 0.3s; }
-    .nav a:hover { color: #f50057; }
-    .hero { padding: 8rem 2rem 4rem; text-align: center; background: linear-gradient(#1a1a2e, #16213e); transition: 0.5s ease-in-out; }
-    .typing-text { color: #f50057; font-size: 1.2rem; margin-top: 0.5rem; animation: fadeIn 3s ease-in-out; }
-    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
-    .section { padding: 4rem 2rem; transition: all 0.5s ease-in-out; }
-    .skills-container { display: grid; gap: 1.5rem; max-width: 600px; margin: auto; }
-    .skill { background: #1a1a2e; padding: 1rem; border-radius: 10px; text-align: center; }
-    .skill img { width: 40px; height: 40px; }
-    .progress { background: #2c2c47; height: 10px; border-radius: 5px; overflow: hidden; margin-top: 0.5rem; }
-    .progress-bar { height: 10px; background: #f50057; }
-    .project-gallery { display: flex; flex-wrap: wrap; gap: 1.5rem; }
-    .project-card { background: #1a1a2e; padding: 1rem; border-radius: 12px; cursor: pointer; transition: 0.3s ease; }
-    .project-card:hover { background: #2c2c47; transform: scale(1.03); }
-    .project-card img { max-width: 300px; border-radius: 10px; }
-    .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
-    .modal-content { display: block; margin: 5% auto; max-width: 90%; }
-    .close { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
-    .menu-toggle { font-size: 1.8rem; cursor: pointer; display: none; color: white; }
-    @media(max-width:768px) { 
-      .nav ul { flex-direction: column; display: none; background: #1a1a2e; position: absolute; right: 2rem; top: 4rem; padding: 1rem; border-radius: 10px; } 
-      .nav.active ul { display: flex; } 
-      .menu-toggle { display: block; } 
-    }
-  </style></body></html>
+    <p>
+      Gua Marshal, seorang developer muda dengan semangat membara di dunia digital. Gua spesialis dalam bikin forum dan website komunitas, terutama untuk dunia GTA SA-MP. Dari awal gua cuma player biasa, sekarang gua jadi penyedia jasa forum yang punya sentuhan estetika dan performa tinggi. Gua percaya bahwa setiap komunitas butuh tempat yang solid buat berkembang, dan gua hadir untuk wujudin itu.
+      <br><br>
+      Dengan pengalaman, kreativitas, dan fokus gua pada detail, gua bisa bantu lo bangun forum yang bukan cuma jalan, tapi juga keren dilihat dan nyaman dipakai. Selain forum, gua juga paham backend dan frontend, biasa pake HTML, CSS, JS, PHP, dan MySQL.
+      <br><br>
+      Gua terus berkembang dan ngulik hal baru setiap hari, karena buat gua, jadi developer itu proses tanpa akhir. Gua siap jadi partner digital lo!
+    </p>
+  </section>
