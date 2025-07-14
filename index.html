@@ -1,10 +1,10 @@
-<!DOCTYPE html><html lang="id">
-<head>
+<!DOCTYPE html><html lang="id"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andra Marshal | Portofolio</title>  <!-- Font Montserrat -->  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>  <!-- Font Awesome -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>  <!-- Klik Sound --><audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_841b95f7b6.mp3"></audio>
-
-  <style>
+  <title>Andra Marshal | Portofolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_841b95f7b6.mp3"></audio>  <style>
     *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
     body{font-family:'Montserrat',sans-serif;background:#0e0e0e;color:#fff}
 
@@ -40,7 +40,9 @@
 
     .skills ul,.knowledge ul{list-style:none;padding:0}
     .skills li,.knowledge li{background:#1c1c1c;margin:10px 0;padding:12px;
-      border-left:4px solid #ff0055;border-radius:6px}
+      border-left:4px solid #ff0055;border-radius:6px;display:flex;align-items:center;gap:12px}
+    .skills li i{color:#ff0055;font-size:1.2rem}
+
     .about p{max-width:600px;line-height:1.7}
 
     .project-card{background:#1c1c1c;padding:20px;border-radius:10px;margin:12px 0;
@@ -52,12 +54,10 @@
     @keyframes explode{from{opacity:1;transform:scale(1) translateY(0)}
                        to{opacity:0;transform:scale(2) translateY(-50px)}}
 
-    @media(max-width:768px){
-      .burger{display:block}
-      .nav-links{display:none}
-    }
+    @media(max-width:768px){.burger{display:block}.nav-links{display:none}}
   </style></head>
-<body>  <!-- overlay & side menu -->  <div class="overlay" id="overlay"></div>
+<body>
+  <div class="overlay" id="overlay"></div>
   <nav class="side-menu" id="side-menu">
     <a href="#beranda">Beranda</a>
     <a href="#about">Tentang</a>
@@ -66,7 +66,8 @@
     <a href="#projek-web">Projek Web</a>
     <a href="cv.html">CV</a>
     <a href="contact.html">Kontak</a>
-  </nav>  <!-- Header -->  <header>
+  </nav>
+  <header>
     <h1>Marshal</h1>
     <div class="nav-links">
       <a href="#beranda">Beranda</a>
@@ -78,35 +79,38 @@
       <a href="contact.html">Kontak</a>
     </div>
     <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
-  </header>  <!-- Hero -->  <section id="beranda" class="section hero">
+  </header>
+  <section id="beranda" class="section hero">
     <div class="hero-text">
-      <h2>Halo, Saya Andra!</h2>
+      <h2>Halo, Gua Marshal</h2>
       <p class="typing-text"></p>
       <a href="cv.html" class="btn">Lihat CV Saya</a>
     </div>
-  </section>  <!-- About -->  <section id="about" class="section about">
+  </section>
+  <section id="about" class="section about">
     <h2>Tentang Saya</h2>
-    <p>Saya adalah developer bervisi besar: membangun ekosistem web & server-side
-       yang andal, serta menciptakan pengalaman gameplay lewat scripting dan
-       gamemode GTA San Andreas Multiplayer (SA-MP). Setiap baris kode adalah langkah
-       strategis menuju inovasi berikutnya—ditulis dengan disiplin, kreativitas
-       dan rasa ingin tahu tanpa batas.</p>
-  </section>  <!-- Skills -->  <section id="skills" class="section skills">
+    <p>Saya adalah developer bervisi besar: membangun ekosistem web & server-side yang andal, serta menciptakan pengalaman gameplay lewat scripting dan gamemode GTA San Andreas Multiplayer (SA-MP). Setiap baris kode adalah langkah strategis menuju inovasi berikutnya—ditulis dengan disiplin, kreativitas dan rasa ingin tahu tanpa batas.</p>
+  </section>
+  <section id="skills" class="section skills">
     <h2>Skill Coding</h2>
     <ul>
-      <li>HTML & Semantic Markup</li>
-      <li>Responsive CSS / Flexbox / Grid</li>
-      <li>JavaScript dasar & DOM manipulation</li>
-      <li>Deploy statis (GitHub Pages / Netlify)</li>
+      <li><i class="fab fa-html5"></i> HTML & Semantic Markup</li>
+      <li><i class="fab fa-css3-alt"></i> Responsive CSS / Flexbox / Grid</li>
+      <li><i class="fab fa-js"></i> JavaScript dasar & DOM manipulation</li>
+      <li><i class="fab fa-github"></i> GitHub & Deployment</li>
+      <li><i class="fas fa-database"></i> MySQL & PHP</li>
+      <li><i class="fas fa-gamepad"></i> SA-MP Scripting</li>
     </ul>
-  </section>  <!-- Proyek SA-MP -->  <section id="project" class="section knowledge">
+  </section>
+  <section id="project" class="section knowledge">
     <h2>Proyek SA-MP</h2>
     <div class="project-card">
       <strong>🌐 CityLife RolePlay v1.2</strong><br>
       Gamemode RP modular dengan sistem inventory, housing & job scriptable.<br>
       <a href="https://github.com/sh6wm3/citylife-rp" target="_blank">Repo GitHub →</a>
     </div>
-  </section>  <!-- Projek Website & Forum -->  <section id="projek-web" class="section knowledge">
+  </section>
+  <section id="projek-web" class="section knowledge">
     <h2>Projek Website & Forum</h2><div class="project-card">
   <strong>🛒 Shalmei Store</strong><br>
   Toko layanan IT dengan UI modern.<br>
@@ -126,17 +130,19 @@
 <div class="project-card">
   <strong>💻 Forum Luminar RP</strong><br>
   Tampilan awal forum SA-MP bertema gelap, UCP, info admin & rules aesthetic.<br><br>
-  <img src="https://raw.githubusercontent.com/sh6wm3/Marshalweb/main/A_screenshot_showcases_the_homepage_of_Luminar_RP_.png"
+  <img src="https://raw.githubusercontent.com/sh6wm3/Marshalweb/main/file_00000000901061f7b28958c7bd95b3d7.png"
        alt="Forum Luminar RP"
        style="width:100%;border-radius:8px;margin-top:10px" /><br><br>
   <span style="color:#ccc;font-size:0.9rem">*Screenshot forum awal dari Luminar RP</span>
 </div>
 
-  </section>  <!-- CTA -->  <section class="section contact">
+  </section>
+  <section class="section contact">
     <h2>Kontak Saya</h2>
     <p>Ingin berkolaborasi? Klik tombol di bawah untuk halaman kontak.</p>
     <a href="contact.html" class="btn"><i class="fas fa-paper-plane" style="margin-right:8px"></i>Hubungi Saya</a>
-  </section>  <!-- Script -->  <script>
+  </section>
+  <script>
     const text = "Seorang Barista yang terlatih dalam kesabaran, konsistensi dan cita rasa, kini menjelma menjadi Developer yang berfokus pada efisiensi, kreativitas dan teknologi.\n\nSaya aktif membangun sistem interaktif, serta gamemode & scripting GTA San Andreas Multiplayer (SA-MP).\n\nKeahlian bukan hanya apa yang kita tahu, tetapi bagaimana kita terus berkembang.";
     let idx = 0;
     function type() {
@@ -145,23 +151,23 @@
         setTimeout(type, 20);
       }
     }
-    window.addEventListener('load', type);
+    window.addEventListener('load', type);document.addEventListener('click', e => {
+  const star = document.createElement('div');
+  star.className = 'click-star';
+  star.textContent = '★';
+  star.style.left = `${e.pageX}px`;
+  star.style.top  = `${e.pageY}px`;
+  document.body.appendChild(star);
+  document.getElementById('click-sound').play();
+  setTimeout(()=>star.remove(), 1000);
+});
 
-    document.addEventListener('click', e => {
-      const star = document.createElement('div');
-      star.className = 'click-star';
-      star.textContent = '★';
-      star.style.left = `${e.pageX}px`;
-      star.style.top  = `${e.pageY}px`;
-      document.body.appendChild(star);
-      document.getElementById('click-sound').play();
-      setTimeout(()=>star.remove(), 1000);
-    });
+const burger = document.getElementById('burger');
+const side   = document.getElementById('side-menu');
+const over   = document.getElementById('overlay');
+burger.addEventListener('click', ()=>{side.classList.add('open');over.classList.add('show');});
+over.addEventListener('click', ()=>{side.classList.remove('open');over.classList.remove('show');});
 
-    const burger = document.getElementById('burger');
-    const side   = document.getElementById('side-menu');
-    const over   = document.getElementById('overlay');
-    burger.addEventListener('click', ()=>{side.classList.add('open');over.classList.add('show');});
-    over.addEventListener('click', ()=>{side.classList.remove('open');over.classList.remove('show');});
-  </script></body>
+  </script>
+</body>
 </html>
