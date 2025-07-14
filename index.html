@@ -15,11 +15,9 @@
   <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_841b95f7b6.mp3"></audio>
 
   <style>
-    /* ---------- Reset dasar ---------- */
     *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
     body{font-family:'Montserrat',sans-serif;background:#0e0e0e;color:#fff}
 
-    /* ---------- Header & Nav ---------- */
     header{
       background:#0e0e0e;border-bottom:1px solid #222;padding:18px 32px;
       position:sticky;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between}
@@ -27,9 +25,7 @@
     .nav-links a{color:#fff;text-decoration:none;margin-left:24px;transition:.3s}
     .nav-links a:hover{color:#ff0055}
 
-    /* hamburger */
     .burger{display:none;font-size:1.8rem;color:#ff0055;background:none;border:none;cursor:pointer}
-    /* panel menu geser */
     .side-menu{
       position:fixed;top:0;right:-260px;width:260px;height:100vh;background:#0e0e0e;
       box-shadow:-4px 0 10px rgba(0,0,0,.5);transition:.35s;padding:80px 24px;z-index:999}
@@ -40,13 +36,11 @@
       opacity:0;pointer-events:none;transition:.35s;z-index:998}
     .overlay.show{opacity:1;pointer-events:all}
 
-    /* ---------- Bagian umum ---------- */
     .section{padding:80px 40px}
     .btn{display:inline-block;padding:12px 28px;background:#ff0055;border-radius:8px;
       color:#fff;text-decoration:none;font-weight:700;margin-top:28px;transition:.25s}
     .btn:hover{background:#ff3366}
 
-    /* ---------- Hero ---------- */
     .hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:space-between}
     .hero h2{font-size:3rem;color:#ff0055;margin-bottom:10px}
     .typing-text{font-size:1.1rem;line-height:1.8;min-height:130px;white-space:pre-wrap}
@@ -54,24 +48,20 @@
       box-shadow:0 0 30px #ff0055;animation:float 3s ease-in-out infinite}
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-    /* ---------- About / Skills / Knowledge ---------- */
     .skills ul,.knowledge ul{list-style:none;padding:0}
     .skills li,.knowledge li{background:#1c1c1c;margin:10px 0;padding:12px;
       border-left:4px solid #ff0055;border-radius:6px}
     .about p{max-width:600px;line-height:1.7}
 
-    /* ---------- Project SA-MP ---------- */
     .project-card{background:#1c1c1c;padding:20px;border-radius:10px;margin:12px 0;
       border-left:4px solid #ff0055}
     .project-card a{color:#ff3366;text-decoration:none;font-weight:700}
 
-    /* ---------- klik-bintang ---------- */
     .click-star{position:fixed;font-size:24px;color:#ff0055;pointer-events:none;
       animation:explode 1s ease-out forwards;z-index:9999}
     @keyframes explode{from{opacity:1;transform:scale(1) translateY(0)}
                        to{opacity:0;transform:scale(2) translateY(-50px)}}
 
-    /* ---------- Responsif ---------- */
     @media(max-width:768px){
       .burger{display:block}
       .nav-links{display:none}
@@ -111,8 +101,7 @@
       <p class="typing-text"></p>
       <a href="cv.html" class="btn">Lihat CV Saya</a>
     </div>
-    <!-- perbaikan URL langsung jpg/png supaya aman di desktop -->
-    <img src="https://i.postimg.cc/JtDLDL2r/foto.jpg" alt="Foto Andra"/>
+    <img src="https://i.ibb.co/YB2sJTG/foto-baru.jpg" alt="Foto Andra" />
   </section>
 
   <!-- ===== ABOUT ===== -->
@@ -164,7 +153,6 @@
 
   <!-- ==== SCRIPT ==== -->
   <script>
-    /* -------- Typing effect -------- */
     const text = "Seorang Barista yang terlatih dalam kesabaran, konsistensi dan cita rasa, kini menjelma menjadi Developer yang berfokus pada efisiensi, kreativitas dan teknologi.\n\nSaya aktif membangun sistem interaktif, serta gamemode & scripting GTA San Andreas Multiplayer (SA-MP).\n\nKeahlian bukan hanya apa yang kita tahu, tetapi bagaimana kita terus berkembang.";
     let idx = 0;
     function type() {
@@ -175,7 +163,6 @@
     }
     window.addEventListener('load', type);
 
-    /* -------- Klik bintang + suara -------- */
     document.addEventListener('click', e => {
       const star = document.createElement('div');
       star.className = 'click-star';
@@ -187,7 +174,6 @@
       setTimeout(()=>star.remove(), 1000);
     });
 
-    /* -------- Slide-in menu -------- */
     const burger = document.getElementById('burger');
     const side   = document.getElementById('side-menu');
     const over   = document.getElementById('overlay');
