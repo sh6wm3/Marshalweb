@@ -11,6 +11,8 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
+  <!-- Efek klik bintang & suara -->
+  <audio id="click-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_841b95f7b6.mp3"></audio>
   <style>
     * {
       margin: 0;
@@ -120,6 +122,27 @@
         text-align: center;
       }
     }
+
+    /* Efek klik bintang */
+    .click-star {
+      position: fixed;
+      font-size: 24px;
+      color: #ff0055;
+      pointer-events: none;
+      animation: explode 1s ease-out forwards;
+      z-index: 9999;
+    }
+
+    @keyframes explode {
+      0% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(2) translateY(-50px);
+      }
+    }
   </style>
 </head>
 <body>
@@ -178,7 +201,7 @@
   </section>
 
   <script>
-    const text = 
+    const text =
       "Seorang Barista yang terlatih dalam kesabaran, konsistensi, dan cita rasa, kini menjelma menjadi seorang Developer yang berfokus pada efisiensi, kreativitas, dan teknologi.\n\nSaya aktif membangun sistem dan pengalaman interaktif, serta mengembangkan berbagai gamemode dan scripting dalam dunia GTA San Andreas Multiplayer (SAMP).\n\nSaya percaya bahwa keahlian bukan hanya tentang apa yang kita tahu, tapi tentang bagaimana kita terus berkembang, hari demi hari.";
 
     let index = 0;
@@ -190,6 +213,26 @@
       }
     }
     window.onload = ketik;
+
+    // Efek klik bintang + suara
+    document.addEventListener('click', function (e) {
+      const star = document.createElement('div');
+      star.className = 'click-star';
+      star.textContent = '★';
+      star.style.left = `${e.pageX}px`;
+      star.style.top = `${e.pageY}px`;
+      document.body.appendChild(star);
+
+      const sound = document.getElementById('click-sound');
+      if (sound) {
+        sound.currentTime = 0;
+        sound.play();
+      }
+
+      setTimeout(() => {
+        star.remove();
+      }, 1000);
+    });
   </script>
 </body>
 </html>
