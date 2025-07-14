@@ -11,126 +11,71 @@
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #fff;
-      color: #111;
+      background-color: #0a0a0a;
+      color: white;
       transition: background 0.3s, color 0.3s;
     }
-
     header {
       padding: 1rem 2rem;
       background: #111;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #fff;
     }
-
-    header h2 {
-      background-color: #0d99ff;
-      color: white;
-      padding: 0.3rem 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
     }
-
     nav a:hover {
       color: #ff0057;
     }
-
     .container {
       padding: 2rem;
       max-width: 1000px;
       margin: auto;
     }
-
     .profile-img {
       width: 150px;
       border-radius: 50%;
       margin-bottom: 1rem;
       border: 3px solid #ff0057;
     }
-
-    .job-timeline {
-      position: relative;
-      margin: 2rem 0;
-      padding-left: 20px;
-    }
-
     .job-card {
-      position: relative;
-      background: #f3f3f3;
+      background: #1a1a1a;
       padding: 1rem;
       margin-bottom: 1rem;
       border-left: 5px solid #ff0057;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
-      animation: slideIn 0.6s ease forwards;
     }
-
     .job-card:hover {
       transform: scale(1.02);
-      box-shadow: 0 0 12px #ff0057;
+      box-shadow: 0 0 10px #ff0057;
     }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
     .progress {
-      background: #ddd;
+      background: #333;
       border-radius: 20px;
       overflow: hidden;
       margin: 10px 0;
     }
-
     .progress-bar {
       height: 20px;
       background: #ff0057;
       width: 0;
       animation: fill 2s forwards;
     }
-
     @keyframes fill {
       to { width: 100%; }
     }
-
-    .skill-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
     .dark-mode {
-      background: #0a0a0a;
-      color: white;
+      background: #fff;
+      color: #111;
     }
-
-    .dark-mode header {
-      background: #1a1a1a;
-    }
-
     .dark-mode .job-card {
-      background: #1a1a1a;
-      color: white;
+      background: #eee;
+      color: #111;
     }
-
-    .dark-mode .progress {
-      background: #333;
-    }
-
     .toggle-btn {
       cursor: pointer;
       font-size: 1.2rem;
@@ -138,17 +83,17 @@
       background: none;
       border: none;
     }
-
-    a.download-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #ff0057;
-      text-decoration: none;
-      font-weight: 600;
+    .dark-mode .toggle-btn {
+      color: #111;
     }
-
-    a.download-btn:hover {
-      text-decoration: underline;
+    .dark-mode header {
+      background: #ddd;
+    }
+    header h2 {
+      color: #ff0057;
+    }
+    .dark-mode header h2 {
+      color: #111;
     }
   </style>
 </head>
@@ -156,55 +101,52 @@
   <header>
     <h2>CV Andra</h2>
     <div>
-      <a href="index.html" style="color: #fff; margin-right: 1rem;">⬅️ Kembali ke Beranda</a>
+      <a href="index.html">⬅️ Kembali ke Beranda</a>
       <button class="toggle-btn" onclick="toggleDarkMode()">🌓</button>
     </div>
   </header>
 
   <div class="container">
     <center>
-      <img src="https://i.postimg.cc/CBZxxf8Y/foto-cv.jpg" alt="Foto Andra" class="profile-img">
+      <img src="https://raw.githubusercontent.com/sh6wm3/Marshalweb/main/d4d1976cdd856afbb78e64698777be33.jpg" alt="Foto Andra" class="profile-img" />
       <h2>Andra Lutfiansyah Marshal</h2>
       <p>Head Barista | Kopi Enthusiast</p>
     </center>
 
     <h3>Pengalaman Kerja</h3>
-    <div class="job-timeline">
-      <div class="job-card" onclick="alert('Yukscoffe: 6 Bulan sebagai Barista')">
-        <strong>Yukscoffe</strong> - 6 Bulan (Barista)
-      </div>
-      <div class="job-card" onclick="alert('Jack Coffe: 1 Tahun sebagai Barista')">
-        <strong>Jack Coffe</strong> - 1 Tahun (Barista)
-      </div>
-      <div class="job-card" onclick="alert('Kopisoe: 1 Tahun sebagai Head Barista')">
-        <strong>Kopisoe</strong> - 1 Tahun (Head Barista)
-      </div>
-      <div class="job-card" onclick="alert('Giardino Cafe: 1.3 Tahun sebagai Barista')">
-        <strong>Giardino Cafe</strong> - 1,3 Tahun (Barista)
-      </div>
-      <div class="job-card" onclick="alert('Varuna Cafe: 8 Bulan sebagai Barista')">
-        <strong>Varuna Cafe</strong> - 8 Bulan (Barista)
-      </div>
-      <div class="job-card" onclick="alert('Black Beans Cafe: 1 Tahun sebagai Head Barista')">
-        <strong>Black Beans Cafe</strong> - 1 Tahun (Head Barista)
-      </div>
+    <div class="job-card" onclick="alert('Yukscoffe: 6 Bulan sebagai Barista')">
+      <strong>Yukscoffe</strong> - 6 Bulan (Barista)
+    </div>
+    <div class="job-card" onclick="alert('Jack Coffe: 1 Tahun sebagai Barista')">
+      <strong>Jack Coffe</strong> - 1 Tahun (Barista)
+    </div>
+    <div class="job-card" onclick="alert('Kopisoe: 1 Tahun sebagai Head Barista')">
+      <strong>Kopisoe</strong> - 1 Tahun (Head Barista)
+    </div>
+    <div class="job-card" onclick="alert('Giardino Cafe: 1.3 Tahun sebagai Barista')">
+      <strong>Giardino Cafe</strong> - 1,3 Tahun (Barista)
+    </div>
+    <div class="job-card" onclick="alert('Varuna Cafe: 8 Bulan sebagai Barista')">
+      <strong>Varuna Cafe</strong> - 8 Bulan (Barista)
+    </div>
+    <div class="job-card" onclick="alert('Black Beans Cafe: 1 Tahun sebagai Head Barista')">
+      <strong>Black Beans Cafe</strong> - 1 Tahun (Head Barista)
     </div>
 
     <h3>Skill</h3>
-    <div class="skill-item"><i class="fas fa-mug-hot"></i> Latte Art</div>
+    <p>Latte Art</p>
     <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
-
-    <div class="skill-item"><i class="fas fa-coffee"></i> Manual Brewing</div>
+    <p>Manual Brewing</p>
     <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
-
-    <div class="skill-item"><i class="fas fa-users-cog"></i> Team Leadership</div>
+    <p>Team Leadership</p>
     <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
 
     <h3>Tentang Dunia Kopi</h3>
     <p>Saya mulai bekerja sebagai barista sejak tahun 2017. Dunia kopi adalah passion saya. Setiap cangkir kopi memiliki cerita, dan saya suka menyajikannya dengan cinta dan seni.</p>
 
+    <br>
     <center>
-      <a href="cv-andra.pdf" class="download-btn" download>📄 Download CV PDF</a>
+      <a href="#" style="color: #ff0057; text-decoration: underline;">📄 Download CV PDF</a>
     </center>
   </div>
 
