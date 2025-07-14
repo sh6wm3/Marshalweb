@@ -41,28 +41,12 @@
       color:#fff;text-decoration:none;font-weight:700;margin-top:28px;transition:.25s}
     .btn:hover{background:#ff3366}
 
-    .hero{display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:space-between}
+    .hero{
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+      gap:32px;min-height:65vh;justify-content:center
+    }
     .hero h2{font-size:3rem;color:#ff0055;margin-bottom:10px}
     .typing-text{font-size:1.1rem;line-height:1.8;min-height:130px;white-space:pre-wrap}
-    .hero img{flex:1 1 260px;max-width:400px;width:100%;border-radius:20px}
-    .glow-pic {
-      box-shadow: 0 0 30px #ff0055, 0 0 60px #ff0055;
-      animation: float 3s ease-in-out infinite, glowPulse 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-10px)}
-    }
-
-    @keyframes glowPulse {
-      0%, 100% {
-        box-shadow: 0 0 30px #ff0055, 0 0 60px #ff0055;
-      }
-      50% {
-        box-shadow: 0 0 45px #ff3399, 0 0 90px #ff3399;
-      }
-    }
 
     .skills ul,.knowledge ul{list-style:none;padding:0}
     .skills li,.knowledge li{background:#1c1c1c;margin:10px 0;padding:12px;
@@ -81,7 +65,6 @@
     @media(max-width:768px){
       .burger{display:block}
       .nav-links{display:none}
-      .hero{flex-direction:column;text-align:center}
     }
   </style>
 </head>
@@ -110,14 +93,13 @@
     <button class="burger" id="burger"><i class="fas fa-bars"></i></button>
   </header>
 
-  <!-- ===== HERO ===== -->
+  <!-- ===== HERO TANPA FOTO ===== -->
   <section id="beranda" class="section hero">
     <div class="hero-text">
       <h2>Halo, Saya Andra!</h2>
       <p class="typing-text"></p>
       <a href="cv.html" class="btn">Lihat CV Saya</a>
     </div>
-    <img src="https://i.imgur.com/dAdO0ZL.jpg" alt="Foto Andra" class="glow-pic" />
   </section>
 
   <!-- ===== ABOUT ===== -->
