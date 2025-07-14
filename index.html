@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Andra Marshal | Portofolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
@@ -104,11 +105,26 @@
       max-width: 600px;
       line-height: 1.7;
     }
+
+    .contact ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+    .contact li {
+      margin-bottom: 12px;
+    }
+    .contact i {
+      margin-right: 10px;
+      color: #ff0055;
+    }
     .contact a {
       color: #ff0055;
       text-decoration: none;
-      display: block;
-      margin: 6px 0;
+    }
+    .contact a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -165,9 +181,24 @@
 
   <section class="section contact" id="kontak">
     <h2>Kontak Saya</h2>
-    <a href="mailto:andralutfiansyayforte@gmail.com">📧 andramarshal@gmail.com</a>
-    <a href="https://wa.me/628990097574" target="_blank">📱 WhatsApp: 0812-3456-7890</a>
-    <a href="https://github.com/sh6wm3" target="_blank">💻 GitHub: sh6wm3</a>
+    <ul>
+      <li>
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:andralutfiansyahforte@gmail.com">andramarshal@gmail.com</a>
+      </li>
+      <li>
+        <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/628990097574" target="_blank">WhatsApp: 0812-3456-7890</a>
+      </li>
+      <li>
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/sh6wm3" target="_blank">GitHub: sh6wm3</a>
+      </li>
+      <li>
+        <i class="fab fa-discord"></i>
+        <a href="https://discordapp.com/users/123456789012345678" target="_blank">Discord: Andra#1234</a>
+      </li>
+    </ul>
   </section>
 </body>
 </html>
