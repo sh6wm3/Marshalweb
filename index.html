@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-aU1L3iC3tnbUZ0K0U9FZyUgYzFdiUTk04E3Q/5cuWxX7F9F9zY+fvWYFAwY2C7/yaOCqKZgTLsDQpV3eA4lT1g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <style>
     * {
@@ -61,9 +61,11 @@
       color: #ff0055;
       margin-bottom: 10px;
     }
-    .hero-text p {
+    .typing-text {
       font-size: 1.1rem;
       line-height: 1.8;
+      min-height: 130px;
+      white-space: pre-wrap;
     }
     .hero img {
       width: 100%;
@@ -133,7 +135,7 @@
   <section class="section hero">
     <div class="hero-text">
       <h2>Halo, Saya Andra!</h2>
-      <p>Seorang Barista yang penuh semangat dan ketekunan. Kini mulai belajar dunia teknologi dan coding untuk masa depan yang lebih maju. Saya percaya belajar tidak pernah berhenti.</p>
+      <p class="typing-text"></p>
       <a href="cv.html" class="btn">Lihat CV Saya</a>
     </div>
     <img src="https://i.postimg.cc/JtDLDL2r/foto.jpg" alt="Foto Andra" />
@@ -172,5 +174,20 @@
       Buka Halaman Kontak
     </a>
   </section>
+
+  <script>
+    const text = 
+      "Seorang Barista yang terlatih dalam kesabaran, konsistensi, dan cita rasa, kini menjelma menjadi seorang Developer yang berfokus pada efisiensi, kreativitas, dan teknologi.\n\nSaya aktif membangun sistem dan pengalaman interaktif, serta mengembangkan berbagai gamemode dan scripting dalam dunia GTA San Andreas Multiplayer (SAMP).\n\nSaya percaya bahwa keahlian bukan hanya tentang apa yang kita tahu, tapi tentang bagaimana kita terus berkembang, hari demi hari.";
+
+    let index = 0;
+    function ketik() {
+      if (index < text.length) {
+        document.querySelector('.typing-text').innerHTML += text.charAt(index);
+        index++;
+        setTimeout(ketik, 20);
+      }
+    }
+    window.onload = ketik;
+  </script>
 </body>
 </html>
