@@ -2,78 +2,149 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Andra Marshal | Forum Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andra Marshal | Developer Forum SA-MP</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&display=swap" rel="stylesheet" />
   <style>
-    body {
+    :root {
+      --primary: #66fcf1;
+      --bg: #0b0c10;
+      --fg: #ffffff;
+      --card: #1f2833;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b0c10;
+      --fg: #ffffff;
+    }
+
+    [data-theme="light"] {
+      --bg: #f4f4f4;
+      --fg: #111111;
+      --card: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
       font-family: 'Outfit', sans-serif;
-      background-color: #0b0c10;
-      color: white;
       scroll-behavior: smooth;
     }
+
     nav {
       position: fixed;
-      top: 0;
       width: 100%;
-      background: #1f2833;
+      background: var(--card);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       z-index: 1000;
+      top: 0;
     }
+
     nav a {
-      color: #66fcf1;
+      color: var(--primary);
       margin: 0 1rem;
       text-decoration: none;
-      transition: 0.3s;
     }
+
     nav a:hover {
-      color: #ffffff;
+      color: var(--fg);
     }
+
+    .toggle-dark {
+      cursor: pointer;
+    }
+
     section {
-      padding: 100px 10% 60px;
+      padding: 120px 10% 60px;
       min-height: 100vh;
     }
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
     }
+
+    .hero {
+      text-align: center;
+      padding-top: 150px;
+    }
+
     .hero h1 {
       font-size: 3rem;
-      color: #66fcf1;
     }
-    .hero p {
-      font-size: 1.2rem;
+
+    .typed-text {
+      color: var(--primary);
+      font-weight: bold;
     }
+
+    .card {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
     .skill-bar {
       background: #c5c6c7;
       height: 10px;
       border-radius: 20px;
       overflow: hidden;
     }
+
     .skill-level {
       height: 10px;
-      background: #66fcf1;
+      background: var(--primary);
       border-radius: 20px;
     }
-    .card {
-      background: #1f2833;
-      padding: 1rem;
-      border-radius: 1rem;
-      margin: 1rem 0;
-      transition: transform 0.3s;
+
+    .project-img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
     }
-    .card:hover {
-      transform: translateY(-5px);
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
     }
+
+    .modal-content {
+      margin: 10% auto;
+      display: block;
+      max-width: 80%;
+    }
+
+    .modal-content img {
+      width: 100%;
+    }
+
     .button {
       padding: 0.5rem 1rem;
-      background: #66fcf1;
+      background: var(--primary);
       border: none;
       border-radius: 10px;
       cursor: pointer;
@@ -83,7 +154,7 @@
     }
   </style>
 </head>
-<body>
+<body data-theme="dark">
 
   <nav>
     <div><strong>Andra Marshal</strong></div>
@@ -92,23 +163,26 @@
       <a href="#about">Tentang</a>
       <a href="#skills">Skill</a>
       <a href="#services">Jasa</a>
+      <a href="#projects">Projek</a>
+      <a href="#testimoni">Testimoni</a>
       <a href="cv.html">CV</a>
       <a href="#contact">Kontak</a>
+      <span class="toggle-dark" onclick="toggleDarkMode()">🌓</span>
     </div>
   </nav>
 
   <section class="hero" id="hero">
-    <h1>Hai, gue Andra</h1>
-    <p>Developer Web & Forum | Penyedia Jasa Pembuatan Forum SA-MP</p>
+    <h1>Halo, Gue <span class="typed-text">Developer</span></h1>
+    <p>Spesialis Web & Forum SA-MP</p>
     <button class="button" onclick="location.href='#services'">Lihat Jasa</button>
   </section>
 
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>Tentang Gue</h2>
-    <p>Gue adalah developer pemula yang fokus belajar HTML, CSS, dan JavaScript. Gue juga buka jasa pembuatan forum klasik gaya SA-MP dan forum komunitas.</p>
+    <p>Gue adalah developer pemula yang lagi berkembang. Gue bikin forum klasik SA-MP bergaya Luminar RP, UCP, dan website keren lainnya.</p>
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="fade-up">
     <h2>Skill Coding</h2>
     <div class="card">
       <p>HTML</p>
@@ -124,35 +198,95 @@
     </div>
   </section>
 
-  <section id="services">
-    <h2>Jasa yang Ditawarkan</h2>
+  <section id="services" data-aos="fade-up">
+    <h2>Jasa</h2>
     <div class="card">
       <h3>Forum SA-MP</h3>
-      <p>Desain klasik, fitur UCP, rules, admin panel, dan tampilan rapi seperti Luminar RP.</p>
+      <p>Desain klasik, fitur admin aesthetic, rules, UCP, dan tampilan mirip Luminar RP.</p>
     </div>
     <div class="card">
-      <h3>Web Portfolio</h3>
-      <p>Bantu bikinin portfolio personal seperti website ini, dark mode, scroll animasi, dll.</p>
+      <h3>Website Portofolio</h3>
+      <p>Modern, ada animasi, efek scroll, dan responsive.</p>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Kontak Gue</h2>
-    <p>Email: andra@example.com</p>
-    <p>WhatsApp: 08xxxxxxx</p>
-    <p>Discord: Andra#1234</p>
-    <p>GitHub: github.com/andra-marshal</p>
+  <section id="projects" data-aos="fade-up">
+    <h2>Projek Forum</h2>
+    <img src="https://raw.githubusercontent.com/USERNAME/REPO/main/forum-samp.jpg" alt="Forum SA-MP" class="project-img" onclick="openModal(this.src)">
   </section>
 
-  <script>
-    // Smooth click animation (opsional jika mau efek klik-klik)
-    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+  <section id="testimoni" data-aos="fade-up">
+    <h2>Testimoni Klien</h2>
+    <div class="card">
+      <p><strong>Admin Luminar RP:</strong> Forum-nya rapi, elegan, dan mudah dikustomisasi. Mantap bro!</p>
+    </div>
+    <div class="card">
+      <p><strong>User Forum:</strong> Desainnya klasik tapi modern, suka banget sama tampilannya.</p>
+    </div>
+  </section>
 
+  <section id="contact" data-aos="fade-up">
+    <h2>Kontak</h2>
+    <p>Email: andra@example.com</p>
+    <p>WhatsApp: 08xxxxxxxx</p>
+    <p>Discord: Andra#1234</p>
+    <p><a class="button" href="contact.html">Form Kontak</a></p>
+  </section>
+
+  <!-- Modal Preview -->
+  <div class="modal" id="modal" onclick="closeModal()">
+    <div class="modal-content">
+      <img id="modal-img" src="" alt="Preview">
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Dark Mode Toggle
+    function toggleDarkMode() {
+      const body = document.body;
+      const current = body.getAttribute('data-theme');
+      body.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    }
+
+    // Modal
+    function openModal(src) {
+      document.getElementById("modal-img").src = src;
+      document.getElementById("modal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    // Efek Ketik
+    const typedText = document.querySelector(".typed-text");
+    const words = ["Developer", "Forum Maker", "Freelancer"];
+    let i = 0, j = 0, currentWord = "", isDeleting = false;
+
+    function typeEffect() {
+      if (i < words.length) {
+        if (!isDeleting && j <= words[i].length) {
+          currentWord = words[i].substring(0, j++);
+        } else if (isDeleting && j >= 0) {
+          currentWord = words[i].substring(0, j--);
+        }
+
+        typedText.textContent = currentWord;
+
+        if (j === words[i].length) isDeleting = true;
+        if (j === 0 && isDeleting) {
+          isDeleting = false;
+          i = (i + 1) % words.length;
+        }
+
+        setTimeout(typeEffect, isDeleting ? 50 : 150);
+      }
+    }
+    typeEffect();
+  </script>
 </body>
 </html>
