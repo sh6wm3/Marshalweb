@@ -52,34 +52,46 @@
     .section {
       padding: 80px 40px;
     }
+
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: space-between;
       gap: 50px;
     }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+
     .hero-text h2 {
       font-size: 3rem;
       color: #ff0055;
       margin-bottom: 10px;
     }
+
     .typing-text {
       font-size: 1.1rem;
       line-height: 1.8;
       min-height: 130px;
       white-space: pre-wrap;
     }
+
     .hero img {
+      flex: 1 1 250px;
       width: 100%;
       max-width: 400px;
       border-radius: 20px;
       box-shadow: 0 0 30px #ff0055;
       animation: float 3s ease-in-out infinite;
     }
+
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
+
     .btn {
       margin-top: 30px;
       display: inline-block;
@@ -94,13 +106,16 @@
     .btn:hover {
       background-color: #ff3366;
     }
+
     .skills, .about, .knowledge {
       margin-top: 60px;
     }
+
     .skills ul, .knowledge ul {
       list-style: none;
       padding-left: 0;
     }
+
     .skills li, .knowledge li {
       background: #1c1c1c;
       margin: 10px 0;
@@ -108,17 +123,20 @@
       border-left: 4px solid #ff0055;
       border-radius: 6px;
     }
+
     .about p {
       max-width: 600px;
       line-height: 1.7;
     }
+
     .contact p {
       font-size: 1.1rem;
       margin-bottom: 20px;
     }
+
     @media (max-width: 768px) {
       .hero {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         text-align: center;
       }
     }
