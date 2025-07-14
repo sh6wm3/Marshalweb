@@ -1,161 +1,161 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
+<!DOCTYPE html><html lang="id"><head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CV - Andra Marshal</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Andra Marshal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
-    }
+    }body {
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.6;
+}
 
-    body {
-      background-color: #ffffff;
-      color: #111;
-      line-height: 1.6;
-      padding-top: 80px;
-    }
+header {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    header {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      background-color: #fff;
-      border-bottom: 1px solid #eee;
-      padding: 1rem 2rem;
-      z-index: 1000;
-    }
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #000;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem;
-    }
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  transition: color 0.3s;
+}
 
-    .back-link {
-      display: inline-block;
-      margin: 0 2rem 2rem 2rem;
-      color: #f31260;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+nav a:hover {
+  color: #ff3c3c;
+}
 
-    .back-link:hover {
-      color: #c20d4d;
-    }
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
 
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-    .profile img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+.profile-section img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
 
-    .profile-info h1 {
-      font-size: 2rem;
-      font-weight: 800;
-    }
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
 
-    .section {
-      margin-bottom: 3rem;
-    }
+section {
+  margin-bottom: 2rem;
+}
 
-    .section h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #f31260;
-    }
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ff3c3c;
+}
 
-    .section p {
-      margin-bottom: 0.8rem;
-    }
+.btn-download {
+  display: inline-block;
+  background-color: #ff3c3c;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
 
-    .download-btn {
-      display: inline-block;
-      background-color: #f31260;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: background 0.3s;
-    }
+.btn-download:hover {
+  background-color: #e53232;
+}
 
-    .download-btn:hover {
-      background-color: #d40c55;
-    }
+.btn-home {
+  margin-top: 3rem;
+  display: inline-block;
+  text-align: center;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #555;
-      font-size: 0.9rem;
-    }
+.btn-home a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-home a:hover {
+  color: #ff3c3c;
+}
+
   </style>
-</head>
-<body>
-
+</head><body>
   <header>
-    <div><strong>Andra Marshal</strong> — CV</div>
-  </header>
-
-  <a href="index.html" class="back-link">← Kembali ke Beranda</a>
-
-  <div class="container">
-    <section class="profile">
+    <div class="logo">Andra Marshal</div>
+    <nav>
+      <a href="index.html">Beranda</a>
+    </nav>
+  </header>  <div class="container">
+    <section class="profile-section">
       <img src="foto-profil.jpg" alt="Foto Andra Marshal">
-      <div class="profile-info">
-        <h1>Andra Lutfiansyah Marshal</h1>
-        <p>Web Developer & Head Barista</p>
-        <p>Email: andralutfiansyahforte@gmail.com</p>
-        <p>No. HP: 0899-0097-574</p>
-      </div>
-    </section>
+      <h1>Andra Lutfiansyah Marshal</h1>
+      <p>Mengubah pola pikir manusia agar lebih maju.</p>
+    </section><section>
+  <h2>Pengalaman Kerja</h2>
+  <p>Belum ada pengalaman kerja formal, namun aktif dalam proyek-proyek pengembangan diri dan dunia kopi.</p>
+</section>
 
-    <section class="section">
-      <h2>Pengalaman Kerja</h2>
-      <p><strong>Head Barista</strong> - Coffee House ID (2020–2024)</p>
-      <p><strong>Junior Web Developer</strong> - Proyek Freelance (2023–Sekarang)</p>
-    </section>
+<section>
+  <h2>Soft Skill</h2>
+  <ul>
+    <li>Komunikasi</li>
+    <li>Problem Solving</li>
+    <li>Adaptif</li>
+    <li>Kreativitas</li>
+  </ul>
+</section>
 
-    <section class="section">
-      <h2>Soft Skill</h2>
-      <ul>
-        <li>Public Speaking</li>
-        <li>Teamwork & Leadership</li>
-        <li>Problem Solving</li>
-        <li>Time Management</li>
-      </ul>
-    </section>
+<section>
+  <h2>Tentang Dunia Kopi</h2>
+  <p>Tertarik mendalami dunia kopi dan proses di baliknya, dari hulu ke hilir. Menyukai atmosfer kedai kopi sebagai tempat belajar dan bertumbuh.</p>
+</section>
 
-    <section class="section">
-      <h2>Tentang Dunia Kopi</h2>
-      <p>Saya memiliki passion mendalam di dunia kopi. Berpengalaman sebagai Barista lebih dari 4 tahun, saya mampu mengelola tim dan meracik berbagai macam kopi manual brew hingga espresso-based. Filosofi kopi mengajarkan saya ketelitian dan konsistensi.</p>
-    </section>
+<section>
+  <h2>Unduh CV</h2>
+  <a href="#" class="btn-download">Download PDF</a>
+</section>
 
-    <section class="section">
-      <h2>Download CV PDF</h2>
-      <a class="download-btn" href="cv-andra.pdf" download>📄 Unduh CV PDF</a>
-    </section>
+<div class="btn-home">
+  <a href="index.html">&larr; Kembali ke Beranda</a>
+</div>
+
   </div>
-
-  <footer>
-    © 2025 Andra Lutfiansyah Marshal
-  </footer>
-
-</body>
-</html>
+</body></html>
